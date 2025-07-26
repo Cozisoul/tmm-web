@@ -153,18 +153,19 @@
   </footer>
 
   <!-- JAVASCRIPT LIBRARIES (CDN) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
   
-  <!-- CUSTOM JAVASCRIPT MODULES -->
+  <!-- CUSTOM JAVASCRIPT MODULES (Order is crucial) -->
   <script src="js/performance.js"></script>
   <script src="js/theme-controller.js"></script>
   <script src="js/constellation-canvas.js"></script>
   <script src="js/portfolio-engine.js"></script>
-  <script src="js/data-viz.js"></script>
   <script src="js/scroll-controller.js"></script>
+  
+  <!-- The Main Controller MUST be last -->
   <script src="js/main.js"></script>
 </body>
 </html>
