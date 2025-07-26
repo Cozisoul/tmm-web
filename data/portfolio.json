@@ -1,0 +1,58 @@
+{
+  "projects": [
+    {
+      "id": "data-01",
+      "title": "Sepedi Sentiment Analysis",
+      "category": "data",
+      "year": 2024,
+      "description": "AI-powered sentiment analysis for an underrepresented language.",
+      "thumbnail": "https://images.unsplash.com/photo-1599658880436-c61792e70672?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTkyfDB8MXxzZWFyY2h8N3x8ZGF0YSUyMHZpc3VhbGl6YXRpb258ZW58MHx8fHwxNzEwNDg1NjM5&ixlib=rb-4.0.3&q=80&w=400",
+      "tags": ["Python", "NLP", "AI", "Sepedi"]
+    },
+    {
+      "id": "personal-01",
+      "title": "Remnants of Rhodes",
+      "category": "personal",
+      "year": 2023,
+      "description": "A photographic exploration of post-colonial landscapes and identity.",
+      "thumbnail": "https://images.unsplash.com/photo-1559695339-a868945396a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTkyfDB8MXxzZWFyY2h8MTB8fGFic3RyYWN0JTIwYmxhY2slMjBhbmQlMjB3aGl0ZSUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTcxMDQ4NTczNA&ixlib=rb-4.0.3&q=80&w=400",
+      "tags": ["Photography", "Fine Art", "Archival"]
+    },
+    {
+      "id": "commercial-01",
+      "title": "Vans SA Campaign",
+      "category": "commercial",
+      "year": 2023,
+      "description": "Capturing authentic street culture for a global brand.",
+      "thumbnail": "https://images.unsplash.com/photo-1528201692312-38a81a179644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTkyfDB8MXxzZWFyY2h8Mnx8c2thdGVib2FyZGluZyUyMHN0cmVldCUyMHN0eWxlfGVufDB8fHx8MTcxMDQ4NTc3MQ&ixlib=rb-4.0.3&q=80&w=400",
+      "tags": ["Commercial", "Photography", "Lifestyle"]
+    },
+    {
+      "id": "data-02",
+      "title": "Biko Knowledge Graph",
+      "category": "data",
+      "year": 2024,
+      "description": "Visualizing the network of the Black Consciousness Movement.",
+      "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTkyfDB8MXxzZWFyY2h8Mnx8ZGF0YSUyMHZpc3VhbGl6YXRpb258ZW58MHx8fHwxNzEwNDg1NjM5&ixlib=rb-4.0.3&q=80&w=400",
+      "tags": ["D3.js", "Data-Viz", "History"]
+    },
+    {
+      "id": "personal-02",
+      "title": "Fluid Energy",
+      "category": "personal",
+      "year": 2018,
+      "description": "A photo series exploring the flow of energy between individuals.",
+      "thumbnail": "https://images.unsplash.com/photo-1502675133393-19a9da411685?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTkyfDB8MXxzZWFyY2h8MTF8fHBvcnRyYWl0JTIwYmVhY2h8ZW58MHx8fHwxNzEwNDg1ODQw&ixlib=rb-4.0.3&q=80&w=400",
+      "tags": ["Photography", "Film", "Conceptual"]
+    },
+    {
+      "id": "commercial-02",
+      "title": "Cotton On Campaign",
+      "category": "commercial",
+      "year": 2024,
+      "description": "International Women's Day campaign featuring three creators.",
+      "thumbnail": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTkyfDB8MXxzZWFyY2h8NHx8ZmFzaGlvbiUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTcxMDQ4NTg4Mw&ixlib=rb-4.0.3&q=80&w=400",
+      "tags": ["Commercial", "Videography", "Fashion"]
+    }
+  ]
+}

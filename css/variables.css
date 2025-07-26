@@ -1,0 +1,110 @@
+/*
+==========================================================================
+  AWARD-WINNING PORTFOLIO - CSS VARIABLE SYSTEM
+  This file is the single source of truth for all design tokens.
+  It defines the two core themes: "Systematic" and "Poetic".
+==========================================================================
+*/
+
+:root {
+  /* ------------------------------------------- */
+  /* 1. TYPOGRAPHY SYSTEM
+  /* ------------------------------------------- */
+  --font-systematic: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-poetic: 'Crimson Text', 'Times New Roman', Times, serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', 'Monaco', monospace;
+
+  /* ------------------------------------------- */
+  /* 2. COLOR PALETTE
+  /* ------------------------------------------- */
+  
+  /* NEUTRALS (Brand Kit) */
+  --color-black: #000000;
+  --color-off-white: #FFF8E7;
+
+  /* ACCENTS (Brand Kit) */
+  --color-red: #FF0000;
+  --color-blue: #0000FF;
+  
+  /* SECONDARY ACCENTS (Extended) */
+  --color-green: #283618;
+  --color-yellow: #FEF857;
+
+  /* GRAYSCALE */
+  --color-gray-100: #f8f9fa;
+  --color-gray-300: #e9ecef;
+  --color-gray-500: #adb5bd;
+  --color-gray-700: #495057;
+  --color-gray-900: #212529;
+
+
+  /* ------------------------------------------- */
+  /* 3. LAYOUT & SPACING
+  /* ------------------------------------------- */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-s: 1rem;      /* 16px */
+  --spacing-m: 2rem;      /* 32px */
+  --spacing-l: 4rem;      /* 64px */
+  --spacing-xl: 8rem;     /* 128px */
+
+  --section-padding: var(--spacing-l) var(--spacing-m);
+  --container-width: 1200px;
+  --container-padding: var(--spacing-m);
+
+  /* ------------------------------------------- */
+  /* 4. TRANSITIONS & ANIMATION
+  /* ------------------------------------------- */
+  --duration-fast: 0.2s;
+  --duration-base: 0.4s;
+  --duration-slow: 0.8s;
+  
+  --ease-in-out: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1);
+  
+  
+  /* ------------------------------------------- */
+  /* 5. THEME MAPPING (Default to Systematic)
+  /*    These variables link the abstract tokens
+  /*    to semantic roles. We change these per theme.
+  /* ------------------------------------------- */
+
+  /* Default Theme: Systematic */
+  --bg-primary: var(--color-black);
+  --bg-secondary: var(--color-gray-900);
+  --text-primary: var(--color-gray-100);
+  --text-secondary: var(--color-gray-500);
+  --accent-primary: var(--color-blue);
+  --accent-secondary: var(--color-red);
+  --border-color: var(--color-gray-700);
+  
+  --font-heading: var(--font-systematic);
+  --font-body: var(--font-systematic);
+  
+  --border-radius: 0px;
+  --shadow: none;
+  --transition-ease: var(--ease-out-cubic);
+}
+
+
+/* ------------------------------------------- */
+/* POETIC THEME OVERRIDE
+/* When the body has [data-theme="poetic"],
+/* these variables are swapped in automatically.
+/* ------------------------------------------- */
+
+[data-theme="poetic"] {
+  --bg-primary: var(--color-off-white);
+  --bg-secondary: var(--color-gray-100);
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-700);
+  --accent-primary: var(--color-red);
+  --accent-secondary: var(--color-green);
+  --border-color: var(--color-gray-300);
+
+  --font-heading: var(--font-poetic);
+  --font-body: var(--font-systematic); /* Keep body text readable */
+
+  --border-radius: 4px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --transition-ease: var(--ease-in-out);
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- AWARD-LEVEL META -->
+  <title>Thapelo Masebe - A Living Constellation</title>
+  <meta name="description" content="Data Scientist × Visual Artist × Archivist - Where systematic thinking meets poetic expression.">
+  <meta name="keywords" content="Thapelo Masebe, data science, visual art, digital archive, systematic poetic, award-winning portfolio, South African artist">
+  
+  <!-- SOCIAL MEDIA OPTIMIZATION (OG & Twitter Cards) -->
+  <meta property="og:title" content="Thapelo Masebe - Systematic × Poetic">
+  <meta property="og:description" content="A living constellation of ideas connecting data science, fine art, and archival theory.">
+  <meta property="og:image" content="https://www.thapelomasebe.com/assets/images/og-constellation.jpg"> <!-- Note: Use an absolute URL for production -->
+  <meta property="og:url" content="https://www.thapelomasebe.com"> <!-- Note: Use your final domain -->
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- PERFORMANCE OPTIMIZATION -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <!-- FONTS: Systematic = Inter, Poetic = Crimson Text (Recoleta Alternative), Mono = JetBrains Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- CRITICAL CSS (Inlined for Fastest First Paint) -->
+  <style>
+      :root { --sys-bg: #000; --poet-bg: #fff8e7; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { background: var(--sys-bg); font-family: 'Inter', sans-serif; opacity: 0; transition: opacity 0.5s; }
+      body.loaded { opacity: 1; }
+      .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+  </style>
+  
+  <!-- MAIN STYLESHEETS (Deferred to prevent render-blocking) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/themes/poetic.css">
+</head>
+<body data-theme="systematic">
+  
+  <!-- AWARD-WINNING LOADER -->
+  <div class="loader" id="loader">
+      <!-- Loader elements will be styled in components.css -->
+      <div class="loader-node"></div>
+  </div>
+  
+  <!-- THE SIGNATURE DUALITY TOGGLE -->
+  <div class="duality-control" id="dualityToggle" aria-label="Toggle Theme">
+      <div class="control-label">SYSTEMATIC</div>
+      <div class="control-switch">
+          <div class="switch-slider"></div>
+      </div>
+      <div class="control-label">POETIC</div>
+  </div>
+  
+  <!-- NAVIGATION -->
+  <nav class="navigation" id="navigation">
+      <a href="#constellation" class="nav-brand" aria-label="Home">
+          <span class="brand-initials">TM</span>
+          <span class="brand-version">v3.0</span>
+      </a>
+      <div class="nav-links">
+          <a href="#work" class="nav-link" data-section="work">Work</a>
+          <a href="#system" class="nav-link" data-section="system">System</a>
+          <a href="#archive" class="nav-link" data-section="archive">Archive</a>
+          <a href="#connect" class="nav-link" data-section="connect">Connect</a>
+      </div>
+  </nav>
+  
+  <main id="main-content">
+      <!-- HERO SECTION: THE CONSTELLATION -->
+      <section class="hero" id="constellation">
+          <canvas class="constellation-canvas" id="constellationCanvas"></canvas>
+          <div class="hero-content">
+              <h1 class="hero-title" id="heroTitle">
+                  <span class="title-line">A Living</span>
+                  <span class="title-line">Constellation</span>
+              </h1>
+              <div class="hero-subtitle">
+                  <span class="subtitle-systematic">Data Scientist × Archivist</span>
+                  <span class="subtitle-poetic">Visual Artist × Storyteller</span>
+              </div>
+          </div>
+          <a href="#work" class="scroll-indicator" aria-label="Scroll down to view work"></a>
+      </section>
+      
+      <!-- PORTFOLIO SECTION -->
+      <section class="portfolio" id="work">
+          <div class="section-container">
+              <h2 class="section-title">Selected Works</h2>
+              <div class="portfolio-filters" id="portfolioFilters">
+                  <button class="filter-btn active" data-filter="all">All</button>
+                  <button class="filter-btn" data-filter="data">Data</button>
+                  <button class="filter-btn" data-filter="personal">Personal</button>
+                  <button class="filter-btn" data-filter="commercial">Commercial</button>
+              </div>
+              <div class="portfolio-grid" id="portfolioGrid">
+                  <!-- Projects will be dynamically loaded here by portfolio-engine.js -->
+              </div>
+          </div>
+      </section>
+      
+      <!-- SYSTEM METHODOLOGY -->
+      <section class="system" id="system">
+          <div class="section-container">
+              <h2 class="section-title">The Operating System</h2>
+              <div class="system-grid">
+                  <div class="system-card">
+                      <h3>The Systematic Engine</h3>
+                      <p>Bauhaus principles, data science rigor, and a belief in functional clarity. This is the logic that builds the structure.</p>
+                  </div>
+                  <div class="system-card">
+                      <h3>The Poetic Engine</h3>
+                      <p>Virgil Abloh's 3% rule, archival theory, and narrative-driven expression. This is the soul that fills the space.</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+      <!-- ARCHIVE SECTION (BCDA) -->
+      <section class="archive" id="archive">
+          <div class="section-container">
+              <h2 class="section-title">The Archive</h2>
+              <div class="archive-content">
+                  <h3>Black Consciousness Digital Archive</h3>
+                  <p>A long-term project to create the world's definitive, open-source digital resource dedicated to the systems thinking of Steve Biko and the broader Black Consciousness movement.</p>
+                  <p class="archive-status">Status: Conceptual Blueprint. Projected Launch: 2038.</p>
+              </div>
+          </div>
+      </section>
+      
+      <!-- CONNECT SECTION -->
+      <section class="connect" id="connect">
+          <div class="section-container">
+              <h2 class="section-title">Connect</h2>
+              <div class="connect-links">
+                  <a href="mailto:thapelomasebe@hotmail.com" class="connect-link">thapelomasebe@hotmail.com</a>
+                  <a href="https://www.linkedin.com/in/thapelo-masebe-733a67143/" target="_blank" rel="noopener noreferrer" class="connect-link">LinkedIn</a>
+                  <a href="https://github.com/Cozisoul" target="_blank" rel="noopener noreferrer" class="connect-link">GitHub</a>
+              </div>
+          </div>
+      </section>
+  </main>
+  
+  <footer class="site-footer">
+      <div class="footer-code">print("hello world")</div>
+      <div class="footer-year">2025</div>
+  </footer>
+
+  <!-- JAVASCRIPT LIBRARIES (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  
+  <!-- CUSTOM JAVASCRIPT MODULES -->
+  <script src="js/performance.js"></script>
+  <script src="js/theme-controller.js"></script>
+  <script src="js/constellation-canvas.js"></script>
+  <script src="js/portfolio-engine.js"></script>
+  <script src="js/data-viz.js"></script>
+  <script src="js/scroll-controller.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

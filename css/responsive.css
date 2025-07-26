@@ -1,0 +1,104 @@
+/*
+==========================================================================
+  AWARD-WINNING PORTFOLIO - RESPONSIVE STYLES
+  This file ensures the experience is flawless on all screen sizes,
+  from large desktops down to mobile phones.
+==========================================================================
+*/
+
+/* ------------------------------------------- */
+/* TABLET STYLES (e.g., iPads in portrait)
+/* Screens up to 1024px wide
+/* ------------------------------------------- */
+@media (max-width: 1024px) {
+  /* Reduce spacing for a tighter layout on smaller screens */
+  :root {
+    --spacing-l: 3rem;
+    --spacing-xl: 6rem;
+  }
+
+  .section-title {
+    /* Slightly smaller titles on tablets */
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .navigation {
+    padding: var(--spacing-s) var(--spacing-m);
+  }
+}
+
+
+/* ------------------------------------------- */
+/* MOBILE STYLES (e.g., iPhones, Android devices)
+/* Screens up to 768px wide
+/* ------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    /* Further reduce spacing for mobile */
+    --spacing-m: 1.5rem;
+    --spacing-l: 2rem;
+    --spacing-xl: 4rem;
+    --container-padding: var(--spacing-s);
+  }
+
+  /* --- NAVIGATION & TOGGLE --- */
+  .navigation {
+    padding: var(--spacing-s) var(--spacing-s);
+  }
+  .nav-links {
+    /* On mobile, we hide the text links for space. 
+       A more complex site might have a hamburger menu. */
+    display: none;
+  }
+
+  .duality-control {
+    top: var(--spacing-s);
+    right: var(--spacing-s);
+    padding: var(--spacing-xs) var(--spacing-xs);
+  }
+  .control-label {
+    /* Hide the text labels on the toggle for a minimal mobile UI */
+    display: none;
+  }
+  .control-switch {
+    margin: 0 var(--spacing-xs); /* Add some space since labels are gone */
+  }
+
+  /* --- HERO SECTION --- */
+  .hero-title {
+    font-size: clamp(2.5rem, 15vw, 4rem); /* Ensure title is large but not oversized */
+  }
+  .hero-subtitle {
+    font-size: clamp(0.75rem, 3vw, 0.875rem);
+  }
+  .scroll-indicator {
+    bottom: var(--spacing-m);
+  }
+
+  /* --- PORTFOLIO & SECTIONS --- */
+  section {
+    padding: var(--spacing-xl) 0;
+  }
+  .section-title {
+    margin-bottom: var(--spacing-m);
+  }
+  .portfolio-filters {
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-m);
+  }
+  .filter-btn {
+    padding: var(--spacing-xs) var(--spacing-s);
+    font-size: 0.75rem;
+  }
+  .portfolio-grid {
+    /* Stack project cards in a single column on mobile */
+    grid-template-columns: 1fr;
+    gap: var(--spacing-m);
+  }
+
+  /* --- FOOTER --- */
+  .site-footer {
+    padding: var(--spacing-s);
+    font-size: 0.75rem;
+  }
+}

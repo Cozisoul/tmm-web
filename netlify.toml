@@ -1,0 +1,51 @@
+# ==========================================================================
+#  AWARD-WINNING PORTFOLIO - NETLIFY DEPLOYMENT CONFIGURATION
+#  This file instructs Netlify on how to build and serve our site.
+# ==========================================================================
+
+# 1. Build Settings
+#    Since our project is pure HTML, CSS, and JS (no build step needed),
+#    we just tell Netlify which folder to publish.
+[build]
+  publish = "." # The root directory of our project
+  command = ""    # We don't have a build command, so we leave this empty
+
+[build.environment]
+  NODE_VERSION = "18" # Specify Node version for consistency, though not strictly needed
+
+# 2. HTTP Headers for Performance & Security
+#    This is CRITICAL for high Lighthouse scores and an A+ security rating.
+[[headers]]
+  for = "/*" # These headers apply to all files
+  [headers.values]
+    # Security Headers
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # A modern security policy that's better than listing individual permissions
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self';"
+
+[[headers]]
+  # Set aggressive caching for static assets that don't change often
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800" # Cache for 1 week
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800" # Cache for 1 week
+
+# 3. Redirects & Rewrites
+#    This rule ensures that anyone trying to access a non-existent page
+#    is gracefully handled by our main index.html (useful for Single Page Apps).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 # A 200 status makes it a rewrite, not a redirect
