@@ -1,3 +1,10 @@
+/*
+==========================================================================
+  AWARD-WINNING PORTFOLIO - PORTFOLIO ENGINE v2.4 (Typo Corrected)
+  This version fixes the critical syntax error in createModalHTML.
+==========================================================================
+*/
+
 class PortfolioEngine {
   constructor(mainApp) {
     this.mainApp = mainApp;
@@ -18,7 +25,7 @@ class PortfolioEngine {
     await this.fetchProjects();
     this.renderGrid();
     this.bindEvents();
-    console.log('📁 Portfolio Engine v2.3 (Robust) initialized successfully.');
+    console.log('📁 Portfolio Engine v2.4 (Corrected) initialized successfully.');
   }
 
   async fetchProjects() {
@@ -132,10 +139,11 @@ class PortfolioEngine {
       ? `<div class="interactive-module" id="interactive-module-container"></div>`
       : '';
 
+    // THE FIX IS HERE: class.modal-details is now class="modal-details"
     return `
       <div class="project-modal" id="projectModal">
         <div class="modal-backdrop"></div>
-        <div class.modal-content">
+        <div class="modal-content">
           <button class="modal-close" aria-label="Close project details">×</button>
           <div class="modal-header">
             <h2 class="modal-title">${project.title}</h2>
