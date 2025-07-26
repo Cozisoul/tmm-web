@@ -1,32 +1,24 @@
-/*
-==========================================================================
-  AWARD-WINNING PORTFOLIO - PORTFOLIO ENGINE v2.2 (Data-Viz Integration)
-  This module now calls the DataVisualization engine to render
-  interactive modules inside the project modal.
-==========================================================================
-*/
-
 class PortfolioEngine {
-  constructor(mainApp) { // We receive the main app instance
-    this.mainApp = mainApp; // Store it for later use
-    this.grid = document.getElementById('portfolioGrid');
-    this.filters = document.getElementById('portfolioFilters');
-    
-    if (!this.grid || !this.filters) {
-      console.error('Portfolio Engine failed: Portfolio grid or filters not found.');
-      return;
-    }
-
+  constructor(mainApp) {
+    this.mainApp = mainApp;
+    this.grid = null;
+    this.filters = null;
     this.allProjects = [];
     this.activeFilter = 'all';
     this.init();
   }
 
   async init() {
+    this.grid = document.getElementById('portfolioGrid');
+    this.filters = document.getElementById('portfolioFilters');
+    if (!this.grid || !this.filters) {
+      console.error('Portfolio Engine failed: Critical elements not found.');
+      return;
+    }
     await this.fetchProjects();
     this.renderGrid();
     this.bindEvents();
-    console.log('📁 Portfolio Engine v2.2 initialized.');
+    console.log('📁 Portfolio Engine v2.3 (Robust) initialized successfully.');
   }
 
   async fetchProjects() {
@@ -61,6 +53,7 @@ class PortfolioEngine {
   }
 
   renderGrid() {
+    if (!this.grid) return;
     const projectsToRender = this.activeFilter === 'all'
       ? this.allProjects
       : this.allProjects.filter(p => p.category === this.activeFilter);
@@ -101,6 +94,8 @@ class PortfolioEngine {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     
     const modalElement = document.getElementById('projectModal');
+    if (!modalElement) return;
+
     const modalContent = modalElement.querySelector('.modal-content');
     const modalBackdrop = modalElement.querySelector('.modal-backdrop');
 
@@ -110,8 +105,7 @@ class PortfolioEngine {
       .to(modalBackdrop, { opacity: 1, duration: 0.4 })
       .to(modalContent, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'power2.out' }, "-=0.2")
       .call(() => {
-        // *** NEW: INITIALIZE INTERACTIVE MODULE ***
-        if (projectData.interactive) {
+        if (projectData.interactive && this.mainApp && this.mainApp.dataViz) {
           const container = modalElement.querySelector('#interactive-module-container');
           this.mainApp.dataViz.initializeModule(projectData.interactive, container);
         }
@@ -125,9 +119,8 @@ class PortfolioEngine {
     const modalElement = document.getElementById('projectModal');
     if (!modalElement) return;
     document.body.style.overflow = 'auto';
-    gsap.timeline()
-      .to(modalElement, { opacity: 0, duration: 0.3, ease: 'power2.in' })
-      .call(() => modalElement.remove());
+    gsap.timeline({ onComplete: () => modalElement.remove() })
+      .to(modalElement, { opacity: 0, duration: 0.3, ease: 'power2.in' });
   }
 
   createModalHTML(project) {
@@ -142,7 +135,7 @@ class PortfolioEngine {
     return `
       <div class="project-modal" id="projectModal">
         <div class="modal-backdrop"></div>
-        <div class="modal-content">
+        <div class.modal-content">
           <button class="modal-close" aria-label="Close project details">×</button>
           <div class="modal-header">
             <h2 class="modal-title">${project.title}</h2>
