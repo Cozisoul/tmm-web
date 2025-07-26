@@ -1,8 +1,8 @@
 /*
 ==========================================================================
-  AWARD-WINNING PORTFOLIO - PORTFOLIO ENGINE
-  This module fetches project data from a JSON file, renders the
-  portfolio grid, and handles the interactive filtering logic.
+  AWARD-WINNING PORTFOLIO - PORTFOLIO ENGINE v2.0 (with Modal)
+  This module fetches project data, renders the portfolio grid,
+  handles filtering, AND now manages the project detail modal.
 ==========================================================================
 */
 
@@ -26,15 +26,13 @@ class PortfolioEngine {
     await this.fetchProjects();
     this.renderGrid();
     this.bindEvents();
-    console.log('📁 Portfolio Engine initialized.');
+    console.log('📁 Portfolio Engine v2.0 initialized.');
   }
 
   async fetchProjects() {
     try {
       const response = await fetch('data/portfolio.json');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
       this.allProjects = data.projects || [];
     } catch (error) {
@@ -44,24 +42,29 @@ class PortfolioEngine {
   }
   
   bindEvents() {
+    // Event listener for filter buttons
     this.filters.addEventListener('click', (e) => {
       if (e.target.tagName === 'BUTTON') {
-        const filter = e.target.dataset.filter;
-        this.setActiveFilter(filter);
+        this.setActiveFilter(e.target.dataset.filter);
+      }
+    });
+
+    // Event listener for project cards (using event delegation)
+    this.grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.project-card');
+      if (card) {
+        const projectId = card.dataset.id;
+        this.openProjectModal(projectId);
       }
     });
   }
 
   setActiveFilter(filter) {
-    if (this.activeFilter === filter) return; // Do nothing if filter is already active
-    
+    if (this.activeFilter === filter) return;
     this.activeFilter = filter;
-    
-    // Update active class on buttons
     this.filters.querySelectorAll('.filter-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.filter === filter);
     });
-
     this.animateFilter();
   }
 
@@ -71,7 +74,7 @@ class PortfolioEngine {
       : this.allProjects.filter(p => p.category === this.activeFilter);
 
     this.grid.innerHTML = projectsToRender.map(project => `
-      <div class="project-card" data-category="${project.category}">
+      <div class="project-card" data-id="${project.id}">
         <div class="project-image">
           <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
         </div>
@@ -84,24 +87,82 @@ class PortfolioEngine {
   }
 
   animateFilter() {
-    // GSAP animation for a seamless filter transition
     gsap.to(this.grid, {
       opacity: 0,
       duration: 0.2,
       ease: 'power1.in',
       onComplete: () => {
-        this.renderGrid(); // Re-render the grid with the new filter
+        this.renderGrid();
         gsap.fromTo(this.grid.children, 
           { opacity: 0, y: 30 },
-          { 
-            opacity: 1, 
-            y: 0,
-            duration: 0.4,
-            ease: 'power2.out',
-            stagger: 0.05 // Animate each card in sequence
-          }
+          { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out', stagger: 0.05 }
         );
       }
     });
+  }
+
+  // --- NEW MODAL LOGIC ---
+
+  openProjectModal(projectId) {
+    const projectData = this.allProjects.find(p => p.id === projectId);
+    if (!projectData) {
+      console.error(`Project with ID ${projectId} not found.`);
+      return;
+    }
+
+    // Create the modal element
+    const modalHTML = this.createModalHTML(projectData);
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Animate it into view
+    const modalElement = document.getElementById('projectModal');
+    const modalContent = modalElement.querySelector('.modal-content');
+    const modalBackdrop = modalElement.querySelector('.modal-backdrop');
+
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    gsap.timeline()
+      .to(modalBackdrop, { opacity: 1, duration: 0.4 })
+      .to(modalContent, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'power2.out' }, "-=0.2");
+      
+    // Add close event listeners
+    modalElement.querySelector('.modal-close').addEventListener('click', () => this.closeProjectModal());
+    modalBackdrop.addEventListener('click', () => this.closeProjectModal());
+  }
+  
+  closeProjectModal() {
+    const modalElement = document.getElementById('projectModal');
+    if (!modalElement) return;
+
+    const modalContent = modalElement.querySelector('.modal-content');
+    const modalBackdrop = modalElement.querySelector('.modal-backdrop');
+
+    document.body.style.overflow = 'auto'; // Restore scrolling
+
+    gsap.timeline()
+      .to(modalContent, { opacity: 0, y: 50, scale: 0.95, duration: 0.3, ease: 'power2.in' })
+      .to(modalBackdrop, { opacity: 0, duration: 0.3 }, "-=0.2")
+      .call(() => modalElement.remove()); // Remove from DOM after animation
+  }
+
+  createModalHTML(project) {
+    // Generate the HTML string for the modal
+    // We will expand this with more project details later
+    return `
+      <div class="project-modal" id="projectModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close project details">×</button>
+          <div class="modal-header">
+            <h2 class="modal-title">${project.title}</h2>
+            <span class="modal-category">${project.category} / ${project.year}</span>
+          </div>
+          <div class="modal-body">
+            <img class="modal-main-image" src="${project.thumbnail}" alt="${project.title}">
+            <p class="modal-description">${project.description}</p>
+          </div>
+        </div>
+      </div>
+    `;
   }
 }
