@@ -367,16 +367,138 @@ section {
 }
 
 .modal-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
   padding: var(--spacing-m);
 }
-.modal-main-image {
+@media (min-width: 768px) {
+  .modal-body {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+.modal-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+.modal-gallery-image {
   width: 100%;
   height: auto;
   border-radius: var(--border-radius);
-  margin-bottom: var(--spacing-m);
 }
-.modal-description {
+.modal-details {
+  padding-top: var(--spacing-xs);
+}
+.modal-full-description {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text-secondary);
+  margin-bottom: var(--spacing-m);
 }
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  text-transform: uppercase;
+}
+
+/*
+==========================================================================
+  CUSTOM CURSOR STYLES
+==========================================================================
+*/
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--text-primary);
+  border-radius: 50%;
+  
+  /* THIS IS CRITICAL: The cursor must not block mouse events */
+  pointer-events: none; 
+  
+  /* Ensure it's on top of everything except the modal */
+  z-index: 1999; 
+  
+  /* Center the dot on the actual cursor position */
+  transform: translate(-50%, -50%); 
+  
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease-out;
+}
+
+/* Hide the custom cursor on touch devices */
+@media (hover: none) {
+    .custom-cursor {
+        display: none;
+    }
+}
+
+/* Hide the default browser cursor */
+body {
+    cursor: none;
+}
+
+/* Grow effect when hovering over interactive elements */
+.custom-cursor.grow {
+    transform: scale(2.5) translate(-20%, -20%);
+    border: none;
+    background-color: var(--accent-primary);
+
+/*
+==========================================================================
+  INTERACTIVE DATA MODULE STYLES
+==========================================================================
+*/
+
+.interactive-module {
+  margin-top: var(--spacing-m);
+  padding: var(--spacing-s);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.sentiment-interface {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
+.sentiment-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: var(--spacing-xs);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  resize: vertical;
+}
+
+.sentiment-button {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-s);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.sentiment-result {
+  font-family: var(--font-mono);
+  margin-top: var(--spacing-xs);
+}}

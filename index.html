@@ -12,7 +12,7 @@
   <!-- SOCIAL MEDIA OPTIMIZATION (OG & Twitter Cards) -->
   <meta property="og:title" content="Thapelo Masebe - Systematic × Poetic">
   <meta property="og:description" content="A living constellation of ideas connecting data science, fine art, and archival theory.">
-  <meta property="og:image" content="https://tmm-web.netlify.app/assets/images/og-constellation.jpg"> <!-- Note: Use an absolute URL for production -->
+  <meta property="og:image" content="https://www.thapelomasebe.com/assets/images/og-constellation.jpg"> <!-- Note: Use an absolute URL for production -->
   <meta property="og:url" content="https://www.thapelomasebe.com"> <!-- Note: Use your final domain -->
   <meta name="twitter:card" content="summary_large_image">
   
@@ -43,14 +43,13 @@
 </head>
 <body data-theme="systematic">
   
-  <!-- AWARD-WINNING LOADER -->
+  <!-- LOADER -->
   <div class="loader" id="loader">
-      <!-- Loader elements will be styled in components.css -->
       <div class="loader-node"></div>
   </div>
   
-  <!-- THE SIGNATURE DUALITY TOGGLE -->
-  <div class="duality-control" id="dualityToggle" aria-label="Toggle Theme">
+  <!-- DUALITY TOGGLE -->
+  <div class="duality-control" id="dualityToggle" aria-label="Toggle Theme" data-magnetic>
       <div class="control-label">SYSTEMATIC</div>
       <div class="control-switch">
           <div class="switch-slider"></div>
@@ -60,15 +59,15 @@
   
   <!-- NAVIGATION -->
   <nav class="navigation" id="navigation">
-      <a href="#constellation" class="nav-brand" aria-label="Home">
+      <a href="#constellation" class="nav-brand" aria-label="Home" data-magnetic>
           <span class="brand-initials">TM</span>
           <span class="brand-version">v3.0</span>
       </a>
       <div class="nav-links">
-          <a href="#work" class="nav-link" data-section="work">Work</a>
-          <a href="#system" class="nav-link" data-section="system">System</a>
-          <a href="#archive" class="nav-link" data-section="archive">Archive</a>
-          <a href="#connect" class="nav-link" data-section="connect">Connect</a>
+          <a href="#work" class="nav-link" data-section="work" data-magnetic>Work</a>
+          <a href="#system" class="nav-link" data-section="system" data-magnetic>System</a>
+          <a href="#archive" class="nav-link" data-section="archive" data-magnetic>Archive</a>
+          <a href="#connect" class="nav-link" data-section="connect" data-magnetic>Connect</a>
       </div>
   </nav>
   
@@ -94,10 +93,10 @@
           <div class="section-container">
               <h2 class="section-title">Selected Works</h2>
               <div class="portfolio-filters" id="portfolioFilters">
-                  <button class="filter-btn active" data-filter="all">All</button>
-                  <button class="filter-btn" data-filter="data">Data</button>
-                  <button class="filter-btn" data-filter="personal">Personal</button>
-                  <button class="filter-btn" data-filter="commercial">Commercial</button>
+                  <button class="filter-btn active" data-filter="all" data-magnetic>All</button>
+                  <button class="filter-btn" data-filter="data" data-magnetic>Data</button>
+                  <button class="filter-btn" data-filter="personal" data-magnetic>Personal</button>
+                  <button class="filter-btn" data-filter="commercial" data-magnetic>Commercial</button>
               </div>
               <div class="portfolio-grid" id="portfolioGrid">
                   <!-- Projects will be dynamically loaded here by portfolio-engine.js -->
@@ -139,9 +138,9 @@
           <div class="section-container">
               <h2 class="section-title">Connect</h2>
               <div class="connect-links">
-                  <a href="mailto:thapelomasebe@hotmail.com" class="connect-link">thapelomasebe@hotmail.com</a>
-                  <a href="https://www.linkedin.com/in/thapelo-masebe-733a67143/" target="_blank" rel="noopener noreferrer" class="connect-link">LinkedIn</a>
-                  <a href="https://github.com/Cozisoul" target="_blank" rel="noopener noreferrer" class="connect-link">GitHub</a>
+                  <a href="mailto:thapelomasebe@hotmail.com" class="connect-link" data-magnetic>thapelomasebe@hotmail.com</a>
+                  <a href="https://www.linkedin.com/in/thapelo-masebe-733a67143/" target="_blank" rel="noopener noreferrer" class="connect-link" data-magnetic>LinkedIn</a>
+                  <a href="https://github.com/Cozisoul" target="_blank" rel="noopener noreferrer" class="connect-link" data-magnetic>GitHub</a>
               </div>
           </div>
       </section>
@@ -153,17 +152,18 @@
   </footer>
 
   <!-- JAVASCRIPT LIBRARIES (CDN) -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
   
-  <!-- CUSTOM JAVASCRIPT MODULES (Order is crucial) -->
+  <!-- CUSTOM JAVASCRIPT MODULES -->
   <script src="js/performance.js"></script>
   <script src="js/theme-controller.js"></script>
   <script src="js/constellation-canvas.js"></script>
   <script src="js/portfolio-engine.js"></script>
   <script src="js/scroll-controller.js"></script>
+  <script src="js/cursor-controller.js"></script> <!-- ADD THIS SCRIPT -->
   
   <!-- The Main Controller MUST be last -->
   <script src="js/main.js"></script>

@@ -1,24 +1,24 @@
 /*
 ==========================================================================
-  AWARD-WINNING PORTFOLIO - PORTFOLIO ENGINE v2.0 (with Modal)
-  This module fetches project data, renders the portfolio grid,
-  handles filtering, AND now manages the project detail modal.
+  AWARD-WINNING PORTFOLIO - PORTFOLIO ENGINE v2.2 (Data-Viz Integration)
+  This module now calls the DataVisualization engine to render
+  interactive modules inside the project modal.
 ==========================================================================
 */
 
 class PortfolioEngine {
-  constructor() {
+  constructor(mainApp) { // We receive the main app instance
+    this.mainApp = mainApp; // Store it for later use
     this.grid = document.getElementById('portfolioGrid');
     this.filters = document.getElementById('portfolioFilters');
     
     if (!this.grid || !this.filters) {
-      console.error('Portfolio grid or filters not found!');
+      console.error('Portfolio Engine failed: Portfolio grid or filters not found.');
       return;
     }
 
     this.allProjects = [];
     this.activeFilter = 'all';
-
     this.init();
   }
 
@@ -26,12 +26,12 @@ class PortfolioEngine {
     await this.fetchProjects();
     this.renderGrid();
     this.bindEvents();
-    console.log('📁 Portfolio Engine v2.0 initialized.');
+    console.log('📁 Portfolio Engine v2.2 initialized.');
   }
 
   async fetchProjects() {
     try {
-      const response = await fetch('data/portfolio.json');
+      const response = await fetch('/data/portfolio.json');
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
       this.allProjects = data.projects || [];
@@ -42,20 +42,12 @@ class PortfolioEngine {
   }
   
   bindEvents() {
-    // Event listener for filter buttons
     this.filters.addEventListener('click', (e) => {
-      if (e.target.tagName === 'BUTTON') {
-        this.setActiveFilter(e.target.dataset.filter);
-      }
+      if (e.target.tagName === 'BUTTON') this.setActiveFilter(e.target.dataset.filter);
     });
-
-    // Event listener for project cards (using event delegation)
     this.grid.addEventListener('click', (e) => {
       const card = e.target.closest('.project-card');
-      if (card) {
-        const projectId = card.dataset.id;
-        this.openProjectModal(projectId);
-      }
+      if (card) this.openProjectModal(card.dataset.id);
     });
   }
 
@@ -74,7 +66,7 @@ class PortfolioEngine {
       : this.allProjects.filter(p => p.category === this.activeFilter);
 
     this.grid.innerHTML = projectsToRender.map(project => `
-      <div class="project-card" data-id="${project.id}">
+      <div class="project-card" data-id="${project.id}" data-category="${project.category}">
         <div class="project-image">
           <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
         </div>
@@ -101,31 +93,30 @@ class PortfolioEngine {
     });
   }
 
-  // --- NEW MODAL LOGIC ---
-
   openProjectModal(projectId) {
     const projectData = this.allProjects.find(p => p.id === projectId);
-    if (!projectData) {
-      console.error(`Project with ID ${projectId} not found.`);
-      return;
-    }
+    if (!projectData) return;
 
-    // Create the modal element
     const modalHTML = this.createModalHTML(projectData);
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     
-    // Animate it into view
     const modalElement = document.getElementById('projectModal');
     const modalContent = modalElement.querySelector('.modal-content');
     const modalBackdrop = modalElement.querySelector('.modal-backdrop');
 
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
 
     gsap.timeline()
       .to(modalBackdrop, { opacity: 1, duration: 0.4 })
-      .to(modalContent, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'power2.out' }, "-=0.2");
+      .to(modalContent, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'power2.out' }, "-=0.2")
+      .call(() => {
+        // *** NEW: INITIALIZE INTERACTIVE MODULE ***
+        if (projectData.interactive) {
+          const container = modalElement.querySelector('#interactive-module-container');
+          this.mainApp.dataViz.initializeModule(projectData.interactive, container);
+        }
+      });
       
-    // Add close event listeners
     modalElement.querySelector('.modal-close').addEventListener('click', () => this.closeProjectModal());
     modalBackdrop.addEventListener('click', () => this.closeProjectModal());
   }
@@ -133,21 +124,21 @@ class PortfolioEngine {
   closeProjectModal() {
     const modalElement = document.getElementById('projectModal');
     if (!modalElement) return;
-
-    const modalContent = modalElement.querySelector('.modal-content');
-    const modalBackdrop = modalElement.querySelector('.modal-backdrop');
-
-    document.body.style.overflow = 'auto'; // Restore scrolling
-
+    document.body.style.overflow = 'auto';
     gsap.timeline()
-      .to(modalContent, { opacity: 0, y: 50, scale: 0.95, duration: 0.3, ease: 'power2.in' })
-      .to(modalBackdrop, { opacity: 0, duration: 0.3 }, "-=0.2")
-      .call(() => modalElement.remove()); // Remove from DOM after animation
+      .to(modalElement, { opacity: 0, duration: 0.3, ease: 'power2.in' })
+      .call(() => modalElement.remove());
   }
 
   createModalHTML(project) {
-    // Generate the HTML string for the modal
-    // We will expand this with more project details later
+    const imageGalleryHTML = (project.images && project.images.length > 0)
+      ? project.images.map(imgUrl => `<img class="modal-gallery-image" src="${imgUrl}" alt="${project.title} detail image" loading="lazy">`).join('')
+      : `<img class="modal-gallery-image" src="${project.thumbnail}" alt="${project.title} detail image" loading="lazy">`;
+
+    const interactiveModuleHTML = project.interactive
+      ? `<div class="interactive-module" id="interactive-module-container"></div>`
+      : '';
+
     return `
       <div class="project-modal" id="projectModal">
         <div class="modal-backdrop"></div>
@@ -158,8 +149,16 @@ class PortfolioEngine {
             <span class="modal-category">${project.category} / ${project.year}</span>
           </div>
           <div class="modal-body">
-            <img class="modal-main-image" src="${project.thumbnail}" alt="${project.title}">
-            <p class="modal-description">${project.description}</p>
+            <div class="modal-gallery">
+              ${imageGalleryHTML}
+            </div>
+            <div class="modal-details">
+              <p class="modal-full-description">${project.fullDescription || project.description}</p>
+              ${interactiveModuleHTML}
+              <div class="modal-tags">
+                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+              </div>
+            </div>
           </div>
         </div>
       </div>
