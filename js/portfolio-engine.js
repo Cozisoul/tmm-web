@@ -1,7 +1,7 @@
 /*
 ==========================================================================
-  AWARD-WINNING PORTFOLIO - PORTFOLIO ENGINE v2.4 (Typo Corrected)
-  This version fixes the critical syntax error in createModalHTML.
+  AWARD-WINNING PORTFOLIO - PORTFOLIO ENGINE v2.4 (Awwwards Polish)
+  This version adds advanced GSAP hover effects to the portfolio grid.
 ==========================================================================
 */
 
@@ -25,7 +25,7 @@ class PortfolioEngine {
     await this.fetchProjects();
     this.renderGrid();
     this.bindEvents();
-    console.log('📁 Portfolio Engine v2.4 (Corrected) initialized successfully.');
+    console.log('📁 Portfolio Engine v2.4 (Polished) initialized.');
   }
 
   async fetchProjects() {
@@ -67,8 +67,8 @@ class PortfolioEngine {
 
     this.grid.innerHTML = projectsToRender.map(project => `
       <div class="project-card" data-id="${project.id}" data-category="${project.category}">
-        <div class="project-image">
-          <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
+        <div class="project-image-wrapper">
+          <img class="project-image" src="${project.thumbnail}" alt="${project.title}" loading="lazy">
         </div>
         <div class="project-content">
           <h3 class="project-title">${project.title}</h3>
@@ -76,6 +76,24 @@ class PortfolioEngine {
         </div>
       </div>
     `).join('');
+    
+    // New: Add advanced hover listeners after rendering
+    this.addHoverListeners();
+  }
+
+  // New: Advanced GSAP hover effects
+  addHoverListeners() {
+    const cards = this.grid.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      const image = card.querySelector('.project-image');
+      const title = card.querySelector('.project-title');
+      
+      const tl = gsap.timeline({ paused: true });
+      tl.to(image, { scale: 1.1, duration: 0.6, ease: 'power2.out' });
+      
+      card.addEventListener('mouseenter', () => tl.play());
+      card.addEventListener('mouseleave', () => tl.reverse());
+    });
   }
 
   animateFilter() {
@@ -139,7 +157,6 @@ class PortfolioEngine {
       ? `<div class="interactive-module" id="interactive-module-container"></div>`
       : '';
 
-    // THE FIX IS HERE: class.modal-details is now class="modal-details"
     return `
       <div class="project-modal" id="projectModal">
         <div class="modal-backdrop"></div>
