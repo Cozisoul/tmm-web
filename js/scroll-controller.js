@@ -1,47 +1,49 @@
 /*
 ==========================================================================
-  AWARD-WINNING PORTFOLIO - SCROLL CONTROLLER
-  This module uses GSAP (GreenSock Animation Platform) to handle all
-  scroll-based animations and the main entrance sequence.
+  AWARD-WINNING PORTFOLIO - SCROLL CONTROLLER v2.0 (Awwwards Polish)
+  This version implements cinematic text reveals and scroll-linked animations.
 ==========================================================================
 */
 
 class ScrollController {
   constructor() {
-    // Register GSAP plugins
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-    
-    // Timelines allow us to chain animations
-    this.heroTimeline = gsap.timeline({ paused: true });
-
+    this.heroTimeline = null;
     this.init();
   }
 
   init() {
+    if (typeof gsap === 'undefined') {
+      console.error('GSAP not loaded.');
+      return;
+    }
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    
+    this.heroTimeline = gsap.timeline({ paused: true });
+
+    // New: Run the text split before setting up animations
+    AnimationUtils.splitTextIntoSpans('.hero-title');
+
     this.setupHeroAnimation();
     this.setupScrollAnimations();
-    console.log('🎬 ScrollController initialized.');
+    this.setupScrollLinkedAnimations(); // New
+    console.log('🎬 ScrollController v2.0 initialized.');
   }
 
-  /**
-   * Defines the master timeline for the hero section's entrance animation.
-   * It starts in a paused state and will be played by main.js.
-   */
   setupHeroAnimation() {
-    // We target the individual lines of the title for a staggered effect
+    // Upgraded: Target the new .anim-word spans for a cinematic reveal
     this.heroTimeline
-      .to(".hero-title .title-line", {
-        y: "0%", // Animate to default position
+      .to(".hero-title .anim-word", {
+        y: "0%",
         opacity: 1,
-        duration: 1.2,
+        duration: 1,
         ease: "power3.out",
-        stagger: 0.1 // This animates each line 0.1s after the previous one
+        stagger: 0.1
       })
       .to(".hero-subtitle", {
         opacity: 1,
         duration: 0.8,
         ease: "power2.out"
-      }, "-=0.8") // The "-=0.8" starts this animation 0.8s before the previous one ends
+      }, "-=0.8")
       .to(".scroll-indicator", {
         opacity: 1,
         duration: 0.8,
@@ -49,11 +51,7 @@ class ScrollController {
       }, "-=0.5");
   }
 
-  /**
-   * Sets up animations for elements that should appear as the user scrolls.
-   */
   setupScrollAnimations() {
-    // Use GSAP's utility to grab all elements we want to animate on scroll
     const animatedElements = gsap.utils.toArray([
       '.section-title',
       '.portfolio-filters',
@@ -61,26 +59,42 @@ class ScrollController {
       '.archive-content',
       '.connect-link'
     ]);
-
     animatedElements.forEach(element => {
-      gsap.to(element, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: element,
-          start: 'top 85%', // Animate when the top of the element is 85% from the top of the viewport
-          toggleActions: 'play none none none', // Play the animation once and don't reverse it
+      gsap.fromTo(element,
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          }
         }
-      });
+      );
     });
   }
 
-  /**
-   * Public method to be called by main.js to start the hero animation.
-   */
+  // New: Add animations linked directly to scroll progress
+  setupScrollLinkedAnimations() {
+    gsap.to('.hero-content', {
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true // This links the animation directly to the scrollbar
+      },
+      opacity: 0,
+      y: -100, // Move it up as it fades out
+      ease: 'power1.in'
+    });
+  }
+
   playHeroAnimation() {
-    this.heroTimeline.play();
+    if (this.heroTimeline) {
+      this.heroTimeline.play();
+    }
   }
 }
