@@ -1,184 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5PNKDCHMBZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-5PNKDCHMBZ');
-  </script>
-  <!-- End Google Tag Manager -->
-  <!-- AWARD-LEVEL META -->
-  <title>Thapelo Masebe - A Living Constellation</title>
-  <meta name="description" content="Data Scientist × Visual Artist × Archivist - Where systematic thinking meets poetic expression.">
-  <meta name="keywords" content="Thapelo Masebe, data science, visual art, digital archive, systematic poetic, award-winning portfolio, South African artist">
-  
-  <!-- SOCIAL MEDIA OPTIMIZATION (OG & Twitter Cards) -->
-  <meta property="og:title" content="Thapelo Masebe - Systematic × Poetic">
-  <meta property="og:description" content="A living constellation of ideas connecting data science, fine art, and archival theory.">
-  <meta property="og:image" content="https://www.thapelomasebe.com/assets/images/og-constellation.jpg"> <!-- Note: Use an absolute URL for production -->
-  <meta property="og:url" content="https://www.thapelomasebe.com"> <!-- Note: Use your final domain -->
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <!-- PERFORMANCE OPTIMIZATION -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  
-  <!-- FONTS: Systematic = Inter, Poetic = Crimson Text (Recoleta Alternative), Mono = JetBrains Mono -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- CRITICAL CSS (Inlined for Fastest First Paint) -->
-  <style>
-      :root { --sys-bg: #000; --poet-bg: #fff8e7; }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body { background: var(--sys-bg); font-family: 'Inter', sans-serif; opacity: 0; transition: opacity 0.5s; }
-      body.loaded { opacity: 1; }
-      .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; }
-  </style>
-  
-  <!-- MAIN STYLESHEETS (Deferred to prevent render-blocking) -->
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/themes/poetic.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thapelo Madiba Masebe (Cozisoul)</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-theme="systematic">
-    <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQVSFRCW"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- LOADER -->
-  <div class="loader" id="loader">
-      <div class="loader-node"></div>
-  </div>
-  
-  <!-- DUALITY TOGGLE -->
-  <div class="duality-control" id="dualityToggle" aria-label="Toggle Theme" data-magnetic="">
-      <div class="control-label">SYSTEMATIC</div>
-      <div class="control-switch">
-          <div class="switch-slider"></div>
-      </div>
-      <div class="control-label">POETIC</div>
-  </div>
-  
-  <!-- NAVIGATION -->
-  <nav class="navigation" id="navigation">
-      <a href="#constellation" class="nav-brand" aria-label="Home" data-magnetic="">
-          <span class="brand-initials">TM</span>
-          <span class="brand-version">v3.0</span>
-      </a>
-      <div class="nav-links">
-          <a href="#work" class="nav-link" data-section="work" data-magnetic="">Work</a>
-          <a href="#system" class="nav-link" data-section="system" data-magnetic="">System</a>
-          <a href="#archive" class="nav-link" data-section="archive" data-magnetic="">Archive</a>
-          <a href="#connect" class="nav-link" data-section="connect" data-magnetic="">Connect</a>
-      </div>
-  </nav>
-  
-  <main id="main-content">
-      <!-- HERO SECTION: THE CONSTELLATION -->
-      <section class="hero" id="constellation">
-          <canvas class="constellation-canvas" id="constellationCanvas" width="982" height="826"></canvas>
-          <div class="hero-content">
-              <h1 class="hero-title" id="heroTitle">
-                  A Living Constellation
-              </h1>
-              <div class="hero-subtitle">
-                  <span class="subtitle-systematic">Data Scientist × Archivist</span>
-                  <span class="subtitle-poetic">Visual Artist × Storyteller</span>
-              </div>
-          </div>
-          <a href="#work" class="scroll-indicator" aria-label="Scroll down to view work" style="opacity: 1;"></a>
-      </section>
-      
-      <!-- PORTFOLIO SECTION -->
-      <section class="portfolio" id="work">
-          <div class="section-container">
-              <h2 class="section-title" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Selected Works</h2>
-              <div class="portfolio-filters" id="portfolioFilters" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                  <button class="filter-btn active" data-filter="all" data-magnetic="">All</button>
-                  <button class="filter-btn" data-filter="data" data-magnetic="">Data</button>
-                  <button class="filter-btn" data-filter="personal" data-magnetic="">Personal</button>
-                  <button class="filter-btn" data-filter="commercial" data-magnetic="">Commercial</button>
-              </div>
-              <div class="portfolio-grid" id="portfolioGrid">
-              </div>
-          </div>
-      </section>
-      
-      <!-- SYSTEM METHODOLOGY -->
-      <section class="system" id="system">
-          <div class="section-container">
-              <h2 class="section-title" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">The Operating System</h2>
-              <div class="system-grid">
-                  <div class="system-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                      <h3>The Systematic Engine</h3>
-                      <p>Bauhaus principles, data science rigor, and a belief in functional clarity. This is the logic that builds the structure.</p>
-                  </div>
-                  <div class="system-card" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                      <h3>The Poetic Engine</h3>
-                      <p>Virgil Abloh's 3% rule, archival theory, and narrative-driven expression. This is the soul that fills the space.</p>
-                  </div>
-              </div>
-          </div>
-      </section>
-      
-      <!-- ARCHIVE SECTION (BCDA) -->
-      <section class="archive" id="archive">
-          <div class="section-container">
-              <h2 class="section-title" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">The Archive</h2>
-              <div class="archive-content" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                  <h3>Black Consciousness Digital Archive</h3>
-                  <p>A long-term project to create the world's definitive, open-source digital resource dedicated to the systems thinking of Steve Biko and the broader Black Consciousness movement.</p>
-                  <p class="archive-status">Status: Conceptual Blueprint. Projected Launch: 2038.</p>
-              </div>
-          </div>
-      </section>
-      
-      <!-- CONNECT SECTION -->
-      <section class="connect" id="connect">
-          <div class="section-container">
-              <h2 class="section-title" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Connect</h2>
-              <div class="connect-links">
-                  <a href="mailto:thapelomasebe@hotmail.com" class="connect-link" data-magnetic="" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">thapelomasebe@hotmail.com</a>
-                  <a href="https://www.linkedin.com/in/thapelo-masebe-733a67143/" target="_blank" rel="noopener noreferrer" class="connect-link" data-magnetic="" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">LinkedIn</a>
-                  <a href="https://github.com/Cozisoul" target="_blank" rel="noopener noreferrer" class="connect-link" data-magnetic="" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">GitHub</a>
-              </div>
-          </div>
-      </section>
-  </main>
-  
-  <footer class="site-footer">
-      <div class="footer-code">print("hello world")</div>
-      <div class="footer-year">2025</div>
-  </footer>
+<body>
+    <header>
+        <h1>Thapelo Madiba Masebe (Cozisoul)</h1>
+        <p>Transdisciplinary Artist, Data Scientist & Creative Technologist</p>
+    </header>
 
-  <!-- JAVASCRIPT LIBRARIES (CDN) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-  
-  <!-- CUSTOM JAVASCRIPT MODULES -->
-  <script src="js/performance.js"></script>
-  <script src="js/animation-utils.js"></script> <!-- ADD THIS SCRIPT -->
-  <script src="js/theme-controller.js"></script>
-  <script src="js/constellation-canvas.js"></script>
-  <script src="js/portfolio-engine.js"></script>
-  <script src="js/data-viz.js"></script>
-  <script src="js/scroll-controller.js"></script>
-  <script src="js/cursor-controller.js"></script>
-  
-  <!-- The Main Controller MUST be last -->
-  <script src="js/main.js"></script>
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                I operate from a professional office, not a traditional studio, architecting systems to translate the unseen—abstract data, memory, and emerging African identity—into tangible forms. My practice is a duality of the Systematic (structured, data-driven analysis) and the Poetic (intuitive, aesthetic inquiry).
+            </p>
+        </section>
+
+        <section id="pillars">
+            <h2>Core Pillars</h2>
+            <ul>
+                <li>Transdisciplinary Art & Research</li>
+                <li>Data Science & Machine Learning</li>
+                <li>Scientific & Cosmic Analysis</li>
+                <li>System Architecture</li>
+            </ul>
+        </section>
+
+        <section id="tech-stack">
+            <h2>Tech Stack</h2>
+            <h3>Data Science & ML</h3>
+            <p>Python, Pandas, SQL (MySQL), R, Tableau, Power BI, TensorFlow, AWS</p>
+            <h3>Creative & Generative</h3>
+            <p>Adobe Creative Suite, Final Cut Pro, DaVinci Resolve, Supercollider, p5.js, GLSL</p>
+            <h3>Systems & Operations</h3>
+            <p>Git, GitHub, Docker, n8n, Ollama, Home Assistant</p>
+        </section>
+
+        <section id="connect">
+            <h2>Connect</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/thapelo-masebe-733a67143/">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/thapelo_gv72/">Instagram</a></li>
+                <li><a href="mailto:thapelomasebe@hotmail.com">Email</a></li>
+                <li><a href="https://github.com/Cozisoul">GitHub</a></li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>

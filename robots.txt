@@ -1,6 +1,0 @@
-# Allow all search engines to crawl the entire site.
-User-agent: *
-Disallow:
-
-# Provide a link to the sitemap.
-Sitemap: https://www.thapelomasebe.com/sitemap.xml
