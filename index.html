@@ -5,91 +5,500 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thapelo Madiba Masebe | Transdisciplinary Practitioner</title>
-    <meta name="description" content="The digital CV and professional hub for Thapelo Madiba Masebe, a transdisciplinary artist, creative technologist, and emerging data scientist.">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes,viewport-fit=cover">
+    <title>Thapelo Madiba Masebe | Transdisciplinary Artist & Photographer</title>
+    <meta name="description" content="Thapelo Madiba Masebe - South African transdisciplinary artist, photographer, and creative technologist. Documenting life through photography since 2014.">
+    <meta name="theme-color" content="#FFF8E7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Thapelo Masebe">
+    <meta name="format-detection" content="telephone=no">
     
-    <!-- Add your favicon links here -->
-     <favicon href="/assets/favicon.ico">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thapelomasebe.com/">
+    <meta property="og:title" content="Thapelo Madiba Masebe | Transdisciplinary Artist & Photographer">
+    <meta property="og:description" content="South African transdisciplinary artist, photographer, and creative technologist. Documenting life through photography since 2014.">
+    <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%23FFF8E7'/><text x='600' y='315' text-anchor='middle' font-size='120' fill='%23111111'>Thapelo Masebe</text><text x='600' y='400' text-anchor='middle' font-size='40' fill='%23666666'>Transdisciplinary Artist & Photographer</text></svg>">
     
-    <link rel="stylesheet" href="./css/style.css">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thapelomasebe.com/">
+    <meta property="twitter:title" content="Thapelo Madiba Masebe | Transdisciplinary Artist & Photographer">
+    <meta property="twitter:description" content="South African transdisciplinary artist, photographer, and creative technologist. Documenting life through photography since 2014.">
+    <meta property="twitter:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%23FFF8E7'/><text x='600' y='315' text-anchor='middle' font-size='120' fill='%23111111'>Thapelo Masebe</text><text x='600' y='400' text-anchor='middle' font-size='40' fill='%23666666'>Transdisciplinary Artist & Photographer</text></svg>">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Thapelo Madiba Masebe",
+      "jobTitle": "Transdisciplinary Artist & Photographer",
+      "description": "South African transdisciplinary artist, photographer, and creative technologist",
+      "url": "https://thapelomasebe.com",
+      "sameAs": [
+        "https://www.instagram.com/thaeplo_gv72/",
+        "https://www.instagram.com/thaporaphy/",
+        "https://www.instagram.com/72film/",
+        "https://www.behance.net/thapelomasebe",
+        "https://www.vogue.com/photovogue/photographers/210386",
+        "https://za.pinterest.com/thapelomasebe/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Johannesburg",
+        "addressCountry": "South Africa"
+      },
+      "email": "thapelomasebe@hotmail.com",
+      "knowsAbout": ["Photography", "Documentary Photography", "Portraiture", "Fashion Photography", "Fine Art Photography", "Architecture Photography"],
+      "award": "Best of PhotoVogue Selection"
+    }
+    </script>
+    
+    <!-- Favicon and app icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📸</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📸</text></svg>">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Critical CSS -->
+    <style>
+      /* Critical above-the-fold styles */
+      :root{
+        --clr-bg: #FFF8E7;
+        --clr-text: #111111;
+        --clr-link: #0000FF;
+        --clr-muted: #666666;
+        --clr-border: #e0e0e0;
+      }
+      body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;margin:0;padding:1%;background-color:var(--clr-bg);color:var(--clr-text)}
+      .cv-container{display:grid;grid-template-columns:1fr 2fr 1.5fr;max-width:1440px;margin:0 auto;min-height:100vh;gap:2rem}
+      .name{font-family:'DM Serif Display',serif;font-size:clamp(32px,8vw,80px);font-weight:400;line-height:1.1;margin-bottom:0.5rem;color:var(--clr-text)}
+      .title{font-size:clamp(14px,4vw,24px);font-weight:400;margin:0 3rem 3rem 0;color:var(--clr-muted)}
+      .profile-photo{width:clamp(80px,20vw,160px);height:clamp(80px,20vw,160px);border-radius:50%;object-fit:cover;border:3px solid var(--clr-border)}
+      @media (max-width:768px){
+        .cv-container{grid-template-columns:1fr;gap:1rem;padding:1rem;height:auto;min-height:100vh;width:100%}
+        .left-column,.middle-column,.right-column{padding:1rem;width:100%}
+        .name{font-size:clamp(28px,6vw,40px);text-align:center;margin-bottom:1rem}
+        .title{font-size:clamp(14px,4vw,18px);margin:0 0 2rem 0;text-align:center}
+        .profile-photo{width:clamp(80px,20vw,120px);height:clamp(80px,20vw,120px);margin:0 auto 1rem}
+        .image-gallery{grid-template-columns:1fr;gap:1rem}
+        .gallery-item{margin-bottom:1rem}
+        .footer-content{grid-template-columns:1fr;text-align:center;gap:1rem}
+      }
+      @media (max-width:480px){
+        .cv-container{padding:0.5rem;gap:0.5rem}
+        .left-column,.middle-column,.right-column{padding:0.5rem}
+        .name{font-size:clamp(24px,8vw,32px)}
+        .title{font-size:clamp(12px,4vw,16px)}
+        .profile-photo{width:clamp(60px,25vw,100px);height:clamp(60px,25vw,100px)}
+        .section-title{font-size:clamp(10px,3vw,14px)}
+        .contact-list li,.social-list li,.skills-list li,.awards-list li{font-size:clamp(11px,3vw,15px)}
+      }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./css/main.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./css/main.css?v=2.0"></noscript>
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="smooth-scroll" data-theme="light">
 
-    <main class="cv-container">
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span id="theme-icon">🌙</span>
+    </button>
+
+    <main class="cv-container smooth-scroll">
         
-        <aside class="left-column">
+        <aside class="left-column smooth-scroll" role="complementary" aria-label="Contact and personal information">
             <header class="identity-header">
+                <div class="bio-image">
+                    <img src="./assets/images/portfolio/bio/me-1.jpg" alt="Thapelo Madiba Masebe - Portrait" class="profile-photo">
+                </div>
                 <h1 class="name">Thapelo Madiba Masebe</h1>
-                <p class="title">Transdisciplinary Artist,
-                 Creative Technologist & Emerging Data Scientist
-                </p>
-                
+                <p class="title">Transdisciplinary Artist, Photographer & Creative Technologist</p>
+                <p class="age-location">28 years old • Johannesburg, South Africa</p>
             </header>
 
             <section class="contact-info">
                 <h2 class="section-title">Contact</h2>
-                <ul>
+                <ul class="contact-list">
                     <li><a href="mailto:thapelomasebe@hotmail.com">thapelomasebe@hotmail.com</a></li>
-                    <li>Gauteng, South Africa</li>
+                    <li>Johannesburg, South Africa</li>
                 </ul>
             </section>
 
-            <section class="online-presence">
-                <h2 class="section-title">Online Presence</h2>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/thapelo-masebe-733a67143" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                    <li><a href="https://github.com/Cozisoul" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                    <li><a href="https://www.researchradio.co.za/" target="_blank" rel="noopener noreferrer">Research Radio</a></li>
-                    <li><a href="https://www.instagram.com/thaeplo_gv72/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <section class="social-links">
+                <h2 class="section-title">Connect</h2>
+                <ul class="social-list">
+                    <li><a href="https://www.instagram.com/thaeplo_gv72/" target="_blank" rel="noopener noreferrer">Instagram @thaeplo_gv72</a></li>
+                    <li><a href="https://www.instagram.com/thaporaphy/" target="_blank" rel="noopener noreferrer">Instagram @thaporaphy</a></li>
+                    <li><a href="https://www.instagram.com/72film/" target="_blank" rel="noopener noreferrer">Instagram @72film</a></li>
+                    <li><a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer">Behance Portfolio</a></li>
+                    <li><a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer">PhotoVogue Profile</a></li>
+                    <li><a href="https://za.pinterest.com/thapelomasebe/" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
                 </ul>
             </section>
 
-            <section class="cv-download">
-                 <a href="/assets/Thapelo_Masebe_CV.pdf" class="download-button" download>Download Full CV (PDF)</a>
+            <section class="skills">
+                <h2 class="section-title">Skills</h2>
+                <ul class="skills-list">
+                    <li>Photography (Documentary, Portrait, Fashion, Fine Art, Architecture)</li>
+                    <li>Photojournalism</li>
+                    <li>Visual Storytelling</li>
+                    <li>Creative Direction</li>
+                    <li>Digital Art</li>
+                    <li>Brand Collaboration</li>
+                </ul>
+            </section>
+
+            <section class="awards">
+                <h2 class="section-title">Recognition</h2>
+                <ul class="awards-list">
+                    <li>PhotoVogue "Best of PhotoVogue" Selection</li>
+                    <li>17 Photos Featured on PhotoVogue</li>
+                    <li>Vogue Platform Recognition</li>
+                </ul>
+            </section>
+
+            <section class="archive-link">
+                <a href="/archive.html" class="archive-button">Complete Archive →</a>
             </section>
         </aside>
 
-                <section class="middle-column">
-            <h2 class="section-title">Summary</h2>
-            <p>I am a <strong data-annotation="transdisciplinary">transdisciplinary artist</strong> and emerging <strong data-annotation="data-scientist">data scientist</strong>. My work blends structured analysis with creative curiosity, using tools like <strong data-annotation="python">Python</strong>, <strong data-annotation="sql">SQL</strong>, and <strong data-annotation="tensorflow">TensorFlow</strong> for <strong data-annotation="eda">Exploratory Data Analysis</strong> and to transform data into stories.</p>
+        <section class="middle-column smooth-scroll" role="main" aria-label="Professional summary and experience">
+            <h2 class="section-title">About</h2>
+            <p>I am a <strong data-annotation="transdisciplinary" tabindex="0" role="button" aria-label="Learn about transdisciplinary practice">transdisciplinary artist</strong> and <strong data-annotation="photographer" tabindex="0" role="button" aria-label="Learn about photography practice">photographer</strong> based in Johannesburg, South Africa. My journey began in 2014 during high school, initially focusing on automotive photography alongside my cousin before transitioning to portraiture. In 2016, during my first year at university, I joined the university newspaper and documented the historic "Fees Must Fall" protests, which taught me the profound importance of storytelling through photography.</p>
 
-            <h2 class="section-title">Experience</h2>
-            <div class="job" data-annotation="ogilvy">
-                <h3 class="job-title">Data Scientist</h3>
-                <p class="job-meta">Ogilvy South Africa | April 2025 - Present</p>
-            </div>
-            <div class="job" data-annotation="deviare">
-                <h3 class="job-title">Data Scientist (Learner)</h3>
-                <p class="job-meta">Deviare | April 2025 - Present</p>
-            </div>
-             <div class="job" data-annotation="freelance">
-                <h3 class="job-title">Freelance Photographer & Videographer</h3>
-                <p class="job-meta">Self-Employed | Jan 2017 - Present</p>
-            </div>
-            <div class="job" data-annotation="varsity">
-                <h3 class="job-title">Image Editor</h3>
-                <p class="job-meta">Varsity Newspaper (UCT) | Jan 2018 - Dec 2018</p>
+            <p>My work spans multiple genres including <strong data-annotation="documentary" tabindex="0" role="button" aria-label="Learn about documentary photography">documentary</strong>, <strong data-annotation="portraiture" tabindex="0" role="button" aria-label="Learn about portraiture">portraiture</strong>, <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">fashion</strong>, <strong data-annotation="fine-art" tabindex="0" role="button" aria-label="Learn about fine art photography">fine art</strong>, and <strong data-annotation="architecture" tabindex="0" role="button" aria-label="Learn about architecture photography">architecture photography</strong>. I believe in the power of visual storytelling to capture moments, emotions, and narratives that words cannot express.</p>
+
+            <h2 class="section-title">Photography Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="timeline-year">2014</h3>
+                    <h4 class="timeline-title">Beginning</h4>
+                    <p>Started photography journey in high school, focusing on automotive photography with my cousin.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="timeline-year">2016</h3>
+                    <h4 class="timeline-title">University & Photojournalism</h4>
+                    <p>Joined university newspaper and documented the "Fees Must Fall" protests, learning the importance of storytelling through photography.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="timeline-year">2017-2024</h3>
+                    <h4 class="timeline-title">Professional Development</h4>
+                    <p>Expanded into multiple photography genres, built portfolio across platforms, and gained recognition on PhotoVogue.</p>
+                </div>
             </div>
 
-            <h2 class="section-title">Certifications</h2>
-            <ul class="cert-list">
-                <li data-annotation="google-analytics">Google Analytics Certification</li>
-                <li data-annotation="aws-ml">AWS Educate Machine Learning Foundations</li>
-                <li data-annotation="aws-genai">Introducing Generative AI with AWS</li>
-                <li data-annotation="tf-deep-learning">Deep Learning with TensorFlow</li>
-                <li data-annotation="tf-genai">GenAI for Data Scientists</li>
-            </ul>
+            <h2 class="section-title">Photography Genres</h2>
+            <div class="genres-grid">
+                <div class="genre-item">
+                    <h3>Documentary</h3>
+                    <p>Capturing real moments and stories, including the historic Fees Must Fall protests and social movements.</p>
+                </div>
+                
+                <div class="genre-item">
+                    <h3>Portraiture</h3>
+                    <p>Intimate and compelling portraits that reveal the essence of the human experience.</p>
+                </div>
+                
+                <div class="genre-item">
+                    <h3>Fashion</h3>
+                    <p>Collaborative work with fashion brands and creative direction for editorial shoots.</p>
+                </div>
+                
+                <div class="genre-item">
+                    <h3>Fine Art</h3>
+                    <p>Conceptual and artistic photography that explores themes of identity, memory, and society.</p>
+                </div>
+                
+                <div class="genre-item">
+                    <h3>Architecture</h3>
+                    <p>Urban landscapes and architectural photography that captures the essence of Johannesburg and beyond.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Platform Presence</h2>
+            <div class="platforms">
+                <div class="platform-item">
+                    <h3>PhotoVogue</h3>
+                    <p>17 photos featured with one "Best of PhotoVogue" selection, showcasing my work on Vogue's prestigious platform.</p>
+                    <a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer" class="platform-link">View Profile →</a>
+                </div>
+                
+                <div class="platform-item">
+                    <h3>Behance</h3>
+                    <p>Professional portfolio showcasing curated projects and creative collaborations.</p>
+                    <a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer" class="platform-link">View Portfolio →</a>
+                </div>
+                
+                <div class="platform-item">
+                    <h3>Instagram</h3>
+                    <p>Multiple accounts documenting my photography journey: @thaeplo_gv72, @thaporaphy, @72film</p>
+                    <a href="https://www.instagram.com/thaeplo_gv72/" target="_blank" rel="noopener noreferrer" class="platform-link">Follow @thaeplo_gv72 →</a>
+            </div>
+            </div>
         </section>
 
-        <aside id="annotation-panel" class="right-column">
+        <aside id="annotation-panel" class="right-column smooth-scroll" role="complementary" aria-label="Interactive annotations and additional information">
             <div class="annotation-content">
-                <p class="placeholder">* Hover over a highlighted term for context.</p>
+                <p class="placeholder">* Tap on a highlighted term for context.</p>
             </div>
-        </aside>
+            
+            <!-- Photography Portfolio Highlights -->
+            <section class="portfolio-highlights">
+                <h2 class="section-title">Portfolio Highlights</h2>
+                
+                <div class="highlight-item">
+                    <h3>Fees Must Fall Documentation</h3>
+                    <p>Historic photojournalism capturing the student protests that shaped South African higher education.</p>
+                    <div class="highlight-tags">
+                        <span class="tag">Documentary</span>
+                        <span class="tag">Photojournalism</span>
+                        <span class="tag">Social Movement</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <h3>PhotoVogue Recognition</h3>
+                    <p>17 photos featured on Vogue's prestigious photography platform, with one "Best of PhotoVogue" selection.</p>
+                    <div class="highlight-tags">
+                        <span class="tag">Recognition</span>
+                        <span class="tag">Vogue</span>
+                        <span class="tag">International</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-item">
+                    <h3>Multi-Genre Portfolio</h3>
+                    <p>Diverse body of work spanning documentary, portraiture, fashion, fine art, and architecture.</p>
+                    <div class="highlight-tags">
+                        <span class="tag">Diverse</span>
+                        <span class="tag">Professional</span>
+                        <span class="tag">Versatile</span>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Portfolio Gallery -->
+            <section class="portfolio-gallery">
+                <h2 class="section-title">Portfolio</h2>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <div class="image-placeholder">
+                            <img src="./assets/images/portfolio/documentary/life-as-it-happens-2.jpg" 
+                                 alt="Documentary photography - Life as it happens" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="gallery-caption">
+                            <h4>Life as it Happens</h4>
+                            <p>Documentary photography capturing real moments and stories from the Fees Must Fall protests</p>
+                            <div class="project-tags">
+                                <span class="tag">Documentary</span>
+                                <span class="tag">Social Justice</span>
+                            </div>
+                            <a href="https://www.instagram.com/thaeplo_gv72/" target="_blank" rel="noopener noreferrer">View on Instagram →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="image-placeholder">
+                            <img src="./assets/images/portfolio/portraiture/amaqamata-1.jpg" 
+                                 alt="Portraiture - Amaqamata series" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="gallery-caption">
+                            <h4>Amaqamata Series</h4>
+                            <p>Intimate portraits exploring human emotion and connection in contemporary South Africa</p>
+                            <div class="project-tags">
+                                <span class="tag">Portraiture</span>
+                                <span class="tag">Identity</span>
+                            </div>
+                            <a href="https://www.instagram.com/thaporaphy/" target="_blank" rel="noopener noreferrer">View @thaporaphy →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="image-placeholder">
+                            <img src="./assets/images/portfolio/fashion/vans-editorial-1.jpg" 
+                                 alt="Fashion photography - Vans editorial" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="gallery-caption">
+                            <h4>Vans Editorial</h4>
+                            <p>Fashion photography and brand collaborations for major lifestyle brands</p>
+                            <div class="project-tags">
+                                <span class="tag">Fashion</span>
+                                <span class="tag">Editorial</span>
+                            </div>
+                            <a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer">View on Behance →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="image-placeholder">
+                            <img src="./assets/images/portfolio/fine-art/reading-genesis-art-series-3.jpg" 
+                                 alt="Fine art photography - Reading Genesis series" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="gallery-caption">
+                            <h4>Reading Genesis Series</h4>
+                            <p>Conceptual fine art exploring identity, memory, and society through visual storytelling</p>
+                            <div class="project-tags">
+                                <span class="tag">Fine Art</span>
+                                <span class="tag">Conceptual</span>
+                            </div>
+                            <a href="https://www.instagram.com/72film/" target="_blank" rel="noopener noreferrer">View @72film →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="image-placeholder">
+                            <img src="./assets/images/portfolio/architecture/untitled-01-city-skyline-installation-1.jpg" 
+                                 alt="Architecture photography - City skyline installation" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="gallery-caption">
+                            <h4>City Skyline Installation</h4>
+                            <p>Urban landscapes and architectural photography of Johannesburg's evolving cityscape</p>
+                            <div class="project-tags">
+                                <span class="tag">Architecture</span>
+                                <span class="tag">Urban</span>
+                            </div>
+                            <a href="https://www.instagram.com/thaeplo_gv72/" target="_blank" rel="noopener noreferrer">View on Instagram →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="image-placeholder">
+                            <img src="./assets/images/portfolio/photovogue/0.jpg" 
+                                 alt="Thapelo Masebe - Black and white portrait, PhotoVogue featured work" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="gallery-caption">
+                            <h4>PhotoVogue Featured</h4>
+                            <p>17 photos featured on Vogue's prestigious platform including this black and white portrait. International recognition for documentary and portraiture work.</p>
+                            <div class="project-tags">
+                                <span class="tag featured">Vogue</span>
+                                <span class="tag featured">International</span>
+                                <span class="tag featured">17 Photos</span>
+                            </div>
+                            <a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer">View PhotoVogue Profile →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact CTA -->
+            <section class="contact-cta">
+                <h2 class="section-title">Let's Work Together</h2>
+                <p>Interested in collaborating or commissioning work? I'm always excited to discuss new projects and creative opportunities.</p>
+                <div class="cta-links">
+                    <a href="mailto:thapelomasebe@hotmail.com" class="cta-button">Send Email</a>
+                    <a href="https://www.instagram.com/thaeplo_gv72/" target="_blank" rel="noopener noreferrer" class="cta-button">Follow on Instagram</a>
+                </div>
+            </section>
+        </aside>
     </main>
 
-    <script type="module" src="./js/main.js"></script>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <h3 class="footer-name">Thapelo Madiba Masebe</h3>
+                    <p class="footer-subtitle">Transdisciplinary Artist, Photographer & Creative Technologist</p>
+                    <p class="footer-location">Johannesburg, South Africa</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Thapelo Madiba Masebe. All rights reserved.</p>
+                    <p class="footer-credits">Built with TMM-OS Design System v4.0</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Portfolio</h4>
+                        <div class="footer-links">
+                            <a href="/archive.html">Archive</a>
+                            <a href="mailto:thapelomasebe@hotmail.com">Contact</a>
+                            <a href="#" onclick="window.print()">Print CV</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Platforms</h4>
+                        <div class="footer-links">
+                            <a href="https://www.instagram.com/thaeplo_gv72/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                            <a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer">Behance</a>
+                            <a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer">PhotoVogue</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Technical</h4>
+                        <div class="footer-links">
+                            <a href="#" onclick="toggleTheme()">Toggle Theme</a>
+                            <a href="#" onclick="window.scrollTo(0,0)">Back to Top</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-tech">
+                    <span>Built with HTML5, CSS3, JavaScript</span>
+                    <span class="footer-separator">•</span>
+                    <span>Responsive Design</span>
+                    <span class="footer-separator">•</span>
+                    <span>Mobile-First</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Performance Monitoring -->
+    <script>
+      // Core Web Vitals monitoring
+      function sendToAnalytics(metric) {
+        console.log('Performance Metric:', metric);
+        // Add your analytics tracking here
+      }
+      
+      // Measure LCP
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          sendToAnalytics({ name: 'LCP', value: entry.startTime });
+        }
+      }).observe({ entryTypes: ['largest-contentful-paint'] });
+      
+      // Measure FID
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          sendToAnalytics({ name: 'FID', value: entry.processingStart - entry.startTime });
+        }
+      }).observe({ entryTypes: ['first-input'] });
+      
+        // Measure CLS (only if supported)
+        if ('PerformanceObserver' in window) {
+          try {
+            let clsValue = 0;
+            new PerformanceObserver((entryList) => {
+              for (const entry of entryList.getEntries()) {
+                if (!entry.hadRecentInput) {
+                  clsValue += entry.value;
+                  sendToAnalytics({ name: 'CLS', value: clsValue });
+                }
+              }
+            }).observe({ entryTypes: ['layout-shift'] });
+          } catch (e) {
+            console.log('CLS measurement not supported in this browser');
+          }
+        }
+    </script>
+    
+    <script src="./js/main.js?v=2.0"></script>
 </body>
 </html>

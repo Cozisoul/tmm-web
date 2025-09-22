@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Thapelo Masebe Site</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #FFF8E7; }
+        .test-section { margin: 20px 0; padding: 20px; border: 2px solid #0000FF; border-radius: 8px; }
+        .highlight { background: #0000FF; color: white; padding: 2px 4px; cursor: pointer; }
+        .annotation-panel { background: #f0f0f0; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🎯 SITE REBUILD TEST</h1>
+    
+    <div class="test-section">
+        <h2>✅ Annotations Test</h2>
+        <p>Click these highlighted terms: <span class="highlight" onclick="showTest('transdisciplinary')">transdisciplinary artist</span> and <span class="highlight" onclick="showTest('photographer')">photographer</span></p>
+        <div id="annotation-panel" class="annotation-panel">
+            <p>* Click a highlighted term above</p>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>✅ Links Test</h2>
+        <p><a href="http://localhost:8001" target="_blank">Main Site</a> | <a href="http://localhost:8001/archive.html" target="_blank">Archive</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>✅ Real Content Test</h2>
+        <p class="success">✓ Thapelo Madiba Masebe - Transdisciplinary Artist & Photographer</p>
+        <p class="success">✓ Johannesburg, South Africa</p>
+        <p class="success">✓ PhotoVogue Recognition</p>
+        <p class="success">✓ Real Instagram Links</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>✅ Mobile Test</h2>
+        <p>Resize your browser window - the site should be responsive!</p>
+    </div>
+    
+    <script>
+        function showTest(term) {
+            const panel = document.getElementById('annotation-panel');
+            const data = {
+                'transdisciplinary': {
+                    title: 'Transdisciplinary Practice',
+                    text: 'Moving fluidly across art, design, and technology within a single, unified practice.',
+                    link: 'https://www.researchradio.co.za/'
+                },
+                'photographer': {
+                    title: 'Photography Practice', 
+                    text: 'The art and practice of creating durable images by recording light.',
+                    link: 'https://www.instagram.com/thaeplo_gv72/'
+                }
+            };
+            
+            const info = data[term];
+            panel.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.text}</p>
+                <a href="${info.link}" target="_blank">Learn More →</a>
+            `;
+        }
+    </script>
+</body>
+</html>

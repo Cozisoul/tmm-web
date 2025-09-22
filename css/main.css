@@ -1,0 +1,206 @@
+/**
+ *  --------------------------------------------------------------------
+ *  TMM-OS Design System Architecture v4.0
+ *  main.css - The Definitive Brand & Design System
+ *  "The Systematic-Poetic"
+ *  --------------------------------------------------------------------
+ *  
+ *  This is the master stylesheet that imports all design system modules
+ *  in the correct order to create the final, bundled stylesheet.
+ *  
+ *  Architecture:
+ *  01-reset.css     - Minimal reset to normalize browser styles
+ *  02-vars.css      - Design tokens (colors, fonts, spacing) as CSS Custom Properties
+ *  03-base.css      - Core typography and base styles
+ *  04-layout.css    - Intentional asymmetry layout architecture
+ *  05-components.css - Reusable component system
+ *  06-animations.css - Agency Edge animations and micro-interactions
+ *  
+ *  Philosophy: "The Systematic-Poetic"
+ *  - The Systematic (The Office): Grcic, Rams, Swiss Modernism
+ *  - The Poetic (The Studio): Boyce, Weems, Abloh
+ *  
+ *  Usage: This file should be the only CSS file imported in your HTML
+ *  --------------------------------------------------------------------
+ */
+
+/* ========================================
+   IMPORT ORDER - CRITICAL
+   ======================================== */
+
+@import '01-reset.css';
+@import '02-vars.css';
+@import '03-base.css';
+@import '04-layout.css';
+@import '05-components.css';
+@import '06-animations.css';
+
+/* ========================================
+   LEGACY SUPPORT & OVERRIDES
+   ======================================== */
+
+/* Ensure backward compatibility with existing styles */
+.cv-container {
+  /* Maintain existing grid structure */
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+/* ========================================
+   DARK MODE TOGGLE FUNCTIONALITY
+   ======================================== */
+
+.theme-toggle {
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: var(--z-fixed);
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-bg);
+}
+
+/* ========================================
+   PRINT OPTIMIZATIONS
+   ======================================== */
+
+@media print {
+  .theme-toggle,
+  .btn,
+  .modal {
+    display: none !important;
+  }
+  
+  .cv-container {
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+  }
+  
+  .right-column {
+    display: none !important;
+  }
+  
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --clr-border: #000000;
+    --clr-muted: #000000;
+  }
+  
+  [data-theme="dark"] {
+    --clr-border: #ffffff;
+    --clr-muted: #ffffff;
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* Optimize for 60fps animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/dmserifdisplay/v15/-nFvOG829Oofr2wohFbTp9iFOSsLA_0q1sQ.woff2') format('woff2');
+}
+
+/* ========================================
+   SYSTEM STATUS INDICATORS
+   ======================================== */
+
+.system-status {
+  position: fixed;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  z-index: var(--z-fixed);
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--clr-success);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-indicator.offline {
+  background-color: #ff0000;
+  animation: none;
+}
+
+/* ========================================
+   DEBUG MODE (Development Only)
+   ======================================== */
+
+[data-debug="true"] * {
+  outline: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+[data-debug="true"] .cv-container {
+  outline: 2px solid rgba(0, 255, 0, 0.5);
+}
+
+[data-debug="true"] .section {
+  outline: 1px solid rgba(0, 0, 255, 0.3);
+}
+
+/* ========================================
+   END OF TMM-OS DESIGN SYSTEM
+   ======================================== */
+
+/*
+  This design system represents the synthesis of:
+  - TMM-OS personal operating system philosophy
+  - The brutalist honesty of *nothing... agency
+  - The poetic minimalism of tmm-web CV
+  - The data-native aesthetic of Research Radio
+  
+  Result: A cohesive, world-class design system
+  that embodies "The Systematic-Poetic" philosophy.
+  
+  Version: 4.0
+  Last Updated: 2024
+  Author: Thapelo Madiba Masebe
+*/

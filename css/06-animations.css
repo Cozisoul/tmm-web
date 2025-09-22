@@ -1,0 +1,563 @@
+/**
+ *  --------------------------------------------------------------------
+ *  TMM-OS Design System Architecture v4.0
+ *  06-animations.css - Agency Edge Animations
+ *  --------------------------------------------------------------------
+ */
+
+/* ========================================
+   CORE ANIMATION PRINCIPLES
+   ======================================== */
+   
+/* The "Agency Edge" - Fluid, purposeful motion that feels alive */
+/* Inspired by the poetic side of the Systematic-Poetic philosophy */
+
+/* ========================================
+   KEYFRAME DEFINITIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 43% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--clr-accent);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--clr-accent), 0 0 30px var(--clr-accent);
+  }
+}
+
+/* ========================================
+   ANIMATION UTILITY CLASSES
+   ======================================== */
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+.slide-in-down {
+  animation: slideInDown 0.5s ease-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* ========================================
+   DELAYED ANIMATIONS
+   ======================================== */
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+.delay-800 {
+  animation-delay: 0.8s;
+}
+
+.delay-900 {
+  animation-delay: 0.9s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* ========================================
+   DURATION VARIATIONS
+   ======================================== */
+
+.duration-fast {
+  animation-duration: 0.3s;
+}
+
+.duration-normal {
+  animation-duration: 0.6s;
+}
+
+.duration-slow {
+  animation-duration: 1s;
+}
+
+.duration-slower {
+  animation-duration: 1.5s;
+}
+
+/* ========================================
+   EASING VARIATIONS
+   ======================================== */
+
+.ease-in {
+  animation-timing-function: ease-in;
+}
+
+.ease-out {
+  animation-timing-function: ease-out;
+}
+
+.ease-in-out {
+  animation-timing-function: ease-in-out;
+}
+
+.ease-linear {
+  animation-timing-function: linear;
+}
+
+.ease-bounce {
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.ease-elastic {
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ========================================
+   INTERSECTION OBSERVER ANIMATIONS
+   ======================================== */
+
+.in-view {
+  animation-play-state: running;
+}
+
+.not-in-view {
+  animation-play-state: paused;
+}
+
+/* ========================================
+   HOVER ANIMATIONS
+   ======================================== */
+
+.hover-lift {
+  transition: transform var(--transition-fast);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-scale {
+  transition: transform var(--transition-fast);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-rotate {
+  transition: transform var(--transition-fast);
+}
+
+.hover-rotate:hover {
+  transform: rotate(5deg);
+}
+
+.hover-glow {
+  transition: box-shadow var(--transition-fast);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px var(--clr-accent);
+}
+
+/* ========================================
+   LOADING ANIMATIONS
+   ======================================== */
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--clr-border);
+  border-top-color: var(--clr-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.loading-dots::before,
+.loading-dots::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: var(--clr-accent);
+  border-radius: 50%;
+  animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.loading-dots::before {
+  animation-delay: -0.32s;
+}
+
+.loading-dots::after {
+  animation-delay: -0.16s;
+}
+
+/* ========================================
+   SCROLL ANIMATIONS
+   ======================================== */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================
+   MICRO-INTERACTIONS
+   ======================================== */
+
+.click-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.click-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.click-ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* ========================================
+   TOUCH FEEDBACK
+   ======================================== */
+
+.touch-active {
+  background-color: rgba(0, 0, 255, 0.1) !important;
+  transform: scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* Touch ripple effect */
+.touch-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.touch-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  pointer-events: none;
+}
+
+.touch-ripple.touch-active::before {
+  width: 200px;
+  height: 200px;
+}
+
+/* ========================================
+   RESPONSIVE ANIMATIONS
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   SMOOTH SCROLLING CUSTOM STYLES
+   ======================================== */
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-accent);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-muted);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--clr-bg);
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--clr-accent) var(--clr-bg);
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ========================================
+   CUSTOM ANIMATION CLASSES
+   ======================================== */
+
+.agency-edge {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.agency-edge:nth-child(1) { animation-delay: 0.1s; }
+.agency-edge:nth-child(2) { animation-delay: 0.2s; }
+.agency-edge:nth-child(3) { animation-delay: 0.3s; }
+.agency-edge:nth-child(4) { animation-delay: 0.4s; }
+.agency-edge:nth-child(5) { animation-delay: 0.5s; }
+
+.systematic-reveal {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.6s ease-out;
+}
+
+.systematic-reveal.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.poetic-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.poetic-glow {
+  animation: glow 3s ease-in-out infinite;
+}

@@ -1,0 +1,361 @@
+/**
+ *  --------------------------------------------------------------------
+ *  TMM-OS Design System Architecture v4.0
+ *  03-base.css - Core Typography & Base Styles
+ *  --------------------------------------------------------------------
+ */
+
+/* ========================================
+   BODY & ROOT STYLES
+   ======================================== */
+
+body {
+  font-family: var(--ff-narrative);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--clr-fg);
+  background-color: var(--clr-bg);
+  margin: 0;
+  padding: var(--space-md);
+  text-align: left;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* ========================================
+   TYPOGRAPHIC HIERARCHY
+   ======================================== */
+
+/* The Signature Voice (The "Artist") - Used with extreme scarcity */
+.name {
+  font-family: var(--ff-signature);
+  font-size: clamp(32px, 8vw, 80px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+  color: var(--clr-fg);
+}
+
+/* The Poetic Voice (The "Narrative") - Primary content */
+.title {
+  font-family: var(--ff-narrative);
+  font-size: clamp(14px, 4vw, 24px);
+  font-weight: 400;
+  margin: 0 var(--space-2xl) var(--space-2xl) 0;
+  color: var(--clr-muted);
+  line-height: 1.2;
+  max-height: calc(1.2em * 3); /* 3-line clamp */
+}
+
+/* The Systematic Voice (The "Annotation") - Metadata & structure */
+.section-title {
+  font-family: var(--ff-annotation);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--clr-fg);
+  padding-bottom: var(--space-sm);
+  margin: var(--space-xl) 0 var(--space-md) 0;
+  color: var(--clr-fg);
+}
+
+.job-title {
+  font-family: var(--ff-narrative);
+  font-size: 18px;
+  font-weight: 700;
+  margin: var(--space-lg) 0 var(--space-xs) 0;
+  color: var(--clr-fg);
+}
+
+.job-meta {
+  font-family: var(--ff-annotation);
+  font-size: 14px;
+  color: var(--clr-muted);
+}
+
+/* ========================================
+   LINKS & INTERACTIONS
+   ======================================== */
+
+a {
+  color: var(--clr-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* Touch-friendly */
+  line-height: 1.4;
+}
+
+a:hover {
+  background-color: rgba(0, 0, 255, 0.1);
+  color: var(--clr-fg);
+}
+
+a:focus {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.download-button {
+  display: inline-block;
+  margin-top: var(--space-2xl);
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--clr-accent);
+  font-family: var(--ff-annotation);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-sm);
+  min-height: 48px;
+}
+
+.download-button:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-bg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.archive-button {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--clr-muted);
+  font-family: var(--ff-annotation);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-sm);
+  color: var(--clr-muted);
+  min-height: 44px;
+}
+
+.archive-button:hover {
+  background-color: var(--clr-muted);
+  color: var(--clr-bg);
+  border-color: var(--clr-fg);
+}
+
+/* ========================================
+   ANNOTATIONS & INTERACTIVE ELEMENTS
+   ======================================== */
+
+[data-annotation] {
+  font-family: var(--ff-annotation);
+  font-weight: 700;
+  color: var(--clr-accent);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  display: inline;
+  min-height: 44px;
+  line-height: 1.4;
+}
+
+[data-annotation]:hover,
+[data-annotation]:focus,
+[data-annotation]:active {
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
+[data-annotation].active {
+  background-color: rgba(0, 0, 255, 0.15);
+}
+
+/* ========================================
+   ANNOTATION PANEL
+   ======================================== */
+
+.annotation-content {
+  position: sticky;
+  top: var(--space-xl);
+  transition: opacity var(--transition-normal);
+}
+
+.annotation-content.is-loading {
+  opacity: 0.5;
+}
+
+.annotation-content .placeholder {
+  color: var(--clr-muted);
+  font-style: italic;
+  text-align: left;
+  font-family: var(--ff-annotation);
+  font-size: 14px;
+}
+
+.annotation-title {
+  font-family: var(--ff-annotation);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  text-align: left;
+  color: var(--clr-fg);
+}
+
+.annotation-text {
+  font-family: var(--ff-narrative);
+  font-size: 15px;
+  color: var(--clr-muted);
+  text-align: left;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.annotation-link {
+  display: inline-block;
+  margin-top: var(--space-md);
+  font-weight: 700;
+  text-align: left;
+  font-family: var(--ff-annotation);
+  font-size: 14px;
+}
+
+/* ========================================
+   LISTS
+   ======================================== */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cert-list {
+  margin-top: var(--space-md);
+}
+
+.cert-list li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--clr-border);
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: var(--ff-annotation);
+}
+
+.cert-list li:last-child {
+  border-bottom: none;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* ========================================
+   TOUCH OPTIMIZATIONS
+   ======================================== */
+
+/* Touch-friendly minimum sizes */
+@media (hover: none) and (pointer: coarse) {
+  a, button, [data-annotation] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: var(--space-sm);
+  }
+  
+  .download-button,
+  .archive-button {
+    min-height: 48px;
+    padding: var(--space-sm) var(--space-lg);
+  }
+  
+  /* Remove hover effects on touch devices */
+  .work-item:hover,
+  .repo-item:hover,
+  .episode-item:hover,
+  .project-item:hover {
+    transform: none;
+  }
+  
+  [data-annotation]:hover {
+    background-color: transparent;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .cv-container {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .name {
+    font-size: 28px;
+  }
+  
+  .title {
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  .download-button,
+  .archive-button {
+    display: none;
+  }
+  
+  .theme-toggle {
+    display: none;
+  }
+}
