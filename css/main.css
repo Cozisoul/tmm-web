@@ -1,6 +1,6 @@
 /**
  *  --------------------------------------------------------------------
- *  TMM-OS Design System Architecture v4.0
+ *  TMM-OS Design System Architecture v5.0
  *  main.css - The Definitive Brand & Design System
  *  "The Systematic-Poetic"
  *  --------------------------------------------------------------------
@@ -8,13 +8,10 @@
  *  This is the master stylesheet that imports all design system modules
  *  in the correct order to create the final, bundled stylesheet.
  *  
- *  Architecture:
- *  01-reset.css     - Minimal reset to normalize browser styles
- *  02-vars.css      - Design tokens (colors, fonts, spacing) as CSS Custom Properties
- *  03-base.css      - Core typography and base styles
- *  04-layout.css    - Intentional asymmetry layout architecture
- *  05-components.css - Reusable component system
- *  06-animations.css - Agency Edge animations and micro-interactions
+ *  Architecture v5.0 (Simplified):
+ *  01-system.css    - Reset + Variables + Base + Animations
+ *  02-layout.css    - Layout + Responsive Design
+ *  03-components.css - All UI Components
  *  
  *  Philosophy: "The Systematic-Poetic"
  *  - The Systematic (The Office): Grcic, Rams, Swiss Modernism
@@ -28,12 +25,9 @@
    IMPORT ORDER - CRITICAL
    ======================================== */
 
-@import '01-reset.css';
-@import '02-vars.css';
-@import '03-base.css';
-@import '04-layout.css';
-@import '05-components.css';
-@import '06-animations.css';
+@import './01-system.css';
+@import './02-layout.css';
+@import './03-components.css';
 
 /* ========================================
    LEGACY SUPPORT & OVERRIDES
@@ -187,7 +181,7 @@
 }
 
 /* ========================================
-   END OF TMM-OS DESIGN SYSTEM
+   END OF TMM-OS DESIGN SYSTEM v5.0
    ======================================== */
 
 /*
@@ -200,7 +194,7 @@
   Result: A cohesive, world-class design system
   that embodies "The Systematic-Poetic" philosophy.
   
-  Version: 4.0
+  Version: 5.0 (Simplified Architecture)
   Last Updated: 2024
   Author: Thapelo Madiba Masebe
 */

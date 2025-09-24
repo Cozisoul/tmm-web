@@ -1,0 +1,461 @@
+/**
+ *  --------------------------------------------------------------------
+ *  TMM-OS Design System Architecture v4.0
+ *  04-layout.css - Clean Flexbox Layout System
+ *  --------------------------------------------------------------------
+ */
+
+/* ========================================
+   SITE WRAPPER - THE FOUNDATION
+   ======================================== */
+
+.site-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ========================================
+   MAIN FLEXBOX LAYOUT SYSTEM
+   ======================================== */
+
+.cv-container {
+  display: flex;
+  max-width: min(1440px, 95vw);
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--space-md);
+  gap: var(--space-lg);
+}
+
+/* ========================================
+   COLUMN LAYOUT - FLEXBOX BASED
+   ======================================== */
+
+.left-column {
+  flex: 0 0 300px;
+  padding: var(--space-md);
+  border-right: 1px solid var(--clr-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.middle-column {
+  flex: 1;
+  padding: var(--space-md);
+  overflow-y: auto;
+  transition: opacity var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.right-column {
+  flex: 0 0 350px;
+  padding: var(--space-md);
+  border-left: 1px solid var(--clr-border);
+  overflow-y: auto;
+  transition: opacity var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ========================================
+   SECTION ARCHITECTURE
+   ======================================== */
+
+.section {
+  padding: var(--space-lg);
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--clr-accent);
+  transition: all var(--transition-normal);
+  flex: 0 0 auto;
+}
+
+.section:hover {
+  background-color: rgba(0, 0, 255, 0.02);
+  transform: translateX(var(--space-xs));
+}
+
+.section-title {
+  font-family: var(--ff-annotation);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--clr-accent);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--clr-accent);
+}
+
+/* ========================================
+   WORK GALLERY - PROJECT SHOWCASE
+   ======================================== */
+
+.work-gallery {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.work-item {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  border-left: 3px solid var(--clr-accent);
+  transition: all var(--transition-normal);
+}
+
+.work-item:hover {
+  background-color: rgba(0, 0, 255, 0.05);
+  transform: translateX(var(--space-xs));
+}
+
+.work-item.featured {
+  border-left-color: var(--clr-accent);
+  background-color: rgba(0, 0, 255, 0.02);
+}
+
+.work-item h3 {
+  font-family: var(--ff-narrative);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--clr-fg);
+}
+
+.work-item p {
+  font-family: var(--ff-narrative);
+  font-size: 14px;
+  color: var(--clr-muted);
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1.4;
+}
+
+.work-links {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.work-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--clr-accent);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-family: var(--ff-annotation);
+}
+
+.work-links a:hover {
+  color: var(--clr-fg);
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
+.portfolio-link {
+  color: var(--clr-muted) !important;
+  font-style: italic;
+}
+
+/* ========================================
+   ECOSYSTEM INTEGRATION LAYOUTS
+   ======================================== */
+
+.github-integration,
+.research-radio-integration,
+.photography-portfolio {
+  margin-top: var(--space-xl);
+}
+
+.gallery-title {
+  font-family: var(--ff-annotation);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+  color: var(--clr-fg);
+}
+
+.github-repos,
+.podcast-episodes,
+.photo-projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.repo-item,
+.episode-item,
+.project-item {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border-left: 3px solid var(--clr-accent);
+  transition: all var(--transition-normal);
+}
+
+.repo-item:hover,
+.episode-item:hover,
+.project-item:hover {
+  background-color: rgba(0, 0, 255, 0.02);
+  transform: translateX(var(--space-xs));
+}
+
+.repo-item h4,
+.episode-item h4,
+.project-item h4 {
+  font-family: var(--ff-narrative);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--clr-fg);
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.repo-item p,
+.episode-item p,
+.project-item p {
+  font-family: var(--ff-narrative);
+  font-size: 14px;
+  color: var(--clr-muted);
+  line-height: 1.4;
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.repo-links,
+.episode-links,
+.project-links {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.repo-links a,
+.episode-links a,
+.project-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--clr-accent);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-family: var(--ff-annotation);
+}
+
+.repo-links a:hover,
+.episode-links a:hover,
+.project-links a:hover {
+  color: var(--clr-fg);
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS - CLEAN SYSTEM
+   ======================================== */
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .cv-container {
+    flex-direction: column;
+    padding: var(--space-sm);
+    gap: var(--space-md);
+  }
+
+  .left-column,
+  .middle-column,
+  .right-column {
+    flex: none;
+    width: 100%;
+    border: none;
+    padding: var(--space-sm);
+  }
+
+  .right-column {
+    order: -1;
+  }
+
+  .name {
+    font-size: clamp(28px, 6vw, 40px);
+    text-align: center;
+    margin-bottom: var(--space-sm);
+  }
+
+  .title {
+    font-size: clamp(14px, 4vw, 18px);
+    text-align: center;
+    margin: 0 0 var(--space-lg) 0;
+  }
+
+  .profile-photo {
+    width: clamp(80px, 20vw, 120px);
+    height: clamp(80px, 20vw, 120px);
+    margin: 0 auto var(--space-md);
+    display: block;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .gallery-item {
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-md);
+  }
+}
+
+/* Tablet Layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cv-container {
+    flex-direction: row;
+    padding: var(--space-md);
+    gap: var(--space-lg);
+  }
+
+  .left-column {
+    flex: 0 0 250px;
+  }
+
+  .middle-column {
+    flex: 1;
+  }
+
+  .right-column {
+    display: none;
+  }
+}
+
+/* Desktop Layout */
+@media (min-width: 1025px) {
+  .cv-container {
+    flex-direction: row;
+    padding: var(--space-lg);
+    gap: var(--space-xl);
+  }
+
+  .left-column {
+    flex: 0 0 300px;
+  }
+
+  .middle-column {
+    flex: 1;
+  }
+
+  .right-column {
+    flex: 0 0 350px;
+  }
+
+  .name {
+    font-size: clamp(48px, 4vw, 64px);
+  }
+
+  .title {
+    font-size: clamp(16px, 2vw, 20px);
+  }
+
+  .section-title {
+    font-size: clamp(12px, 1.5vw, 16px);
+  }
+
+  .job-title {
+    font-size: clamp(16px, 2vw, 20px);
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .cv-container {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .left-column,
+  .middle-column,
+  .right-column {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+  }
+  
+  .name {
+    font-size: 24px;
+    color: #000;
+  }
+  
+  .title {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .image-gallery {
+    display: none;
+  }
+  
+  .theme-toggle {
+    display: none;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY & PERFORMANCE
+   ======================================== */
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .cv-container {
+    border: 2px solid;
+  }
+  
+  .name,
+  .title,
+  .section-title {
+    font-weight: 700;
+  }
+  
+  .gallery-item {
+    border: 2px solid;
+  }
+}

@@ -8,11 +8,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes,viewport-fit=cover">
     <title>Thapelo Madiba Masebe | Transdisciplinary Artist & Photographer</title>
     <meta name="description" content="Thapelo Madiba Masebe - South African transdisciplinary artist, photographer, and creative technologist. Documenting life through photography since 2014.">
+    <meta name="keywords" content="Thapelo Masebe, photographer, South African photographer, documentary photography, portraiture, fashion photography, fine art photography, architecture photography, PhotoVogue, Johannesburg photographer, transdisciplinary artist, creative technologist, Fees Must Fall, photojournalism">
     <meta name="theme-color" content="#FFF8E7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Thapelo Masebe">
     <meta name="format-detection" content="telephone=no">
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -75,7 +79,7 @@
       .cv-container{display:grid;grid-template-columns:1fr 2fr 1.5fr;max-width:1440px;margin:0 auto;min-height:100vh;gap:2rem}
       .name{font-family:'DM Serif Display',serif;font-size:clamp(32px,8vw,80px);font-weight:400;line-height:1.1;margin-bottom:0.5rem;color:var(--clr-text)}
       .title{font-size:clamp(14px,4vw,24px);font-weight:400;margin:0 3rem 3rem 0;color:var(--clr-muted)}
-      .profile-photo{width:clamp(80px,20vw,160px);height:clamp(80px,20vw,160px);border-radius:50%;object-fit:cover;border:3px solid var(--clr-border)}
+      .bio-image{display:flex;justify-content:center;align-items:center;width:100%;margin-bottom:1rem;text-align:center}
       @media (max-width:768px){
         .cv-container{grid-template-columns:1fr;gap:1rem;padding:1rem;height:auto;min-height:100vh;width:100%}
         .left-column,.middle-column,.right-column{padding:1rem;width:100%}
@@ -97,9 +101,8 @@
       }
     </style>
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./css/main.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="./css/main.css?v=2.0"></noscript>
+    <!-- Load CSS immediately -->
+    <link rel="stylesheet" href="./css/main.css?v=2.0">
     
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -118,11 +121,17 @@
         <aside class="left-column smooth-scroll" role="complementary" aria-label="Contact and personal information">
             <header class="identity-header">
                 <div class="bio-image">
-                    <img src="./assets/images/portfolio/bio/me-1.jpg" alt="Thapelo Madiba Masebe - Portrait" class="profile-photo">
+                    <img src="./assets/images/portfolio/bio/me-1.jpg" 
+                         alt="Thapelo Madiba Masebe - Portrait" 
+                         class="profile-photo"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="profile-photo-fallback" style="display: none !important;">
+                        <div class="profile-initials">TM</div>
+                    </div>
                 </div>
                 <h1 class="name">Thapelo Madiba Masebe</h1>
                 <p class="title">Transdisciplinary Artist, Photographer & Creative Technologist</p>
-                <p class="age-location">28 years old • Johannesburg, South Africa</p>
+                <p class="age-location"><span id="age">28</span> years old • Johannesburg, South Africa</p>
             </header>
 
             <section class="contact-info">
@@ -192,7 +201,7 @@
                 </div>
                 
                 <div class="timeline-item">
-                    <h3 class="timeline-year">2017-2024</h3>
+                    <h3 class="timeline-year">2017-<span id="current-year-timeline">2024</span></h3>
                     <h4 class="timeline-title">Professional Development</h4>
                     <p>Expanded into multiple photography genres, built portfolio across platforms, and gained recognition on PhotoVogue.</p>
                 </div>
@@ -418,7 +427,7 @@
                     <p class="footer-location">Johannesburg, South Africa</p>
                 </div>
                 <div class="footer-copyright">
-                    <p>&copy; 2024 Thapelo Madiba Masebe. All rights reserved.</p>
+                    <p>&copy; <span id="current-year">2024</span> Thapelo Madiba Masebe. All rights reserved.</p>
                     <p class="footer-credits">Built with TMM-OS Design System v4.0</p>
                 </div>
             </div>
@@ -499,6 +508,19 @@
         }
     </script>
     
+    <script>
+      // Update current year dynamically
+      const currentYear = new Date().getFullYear();
+      document.getElementById('current-year').textContent = currentYear;
+      document.getElementById('current-year-timeline').textContent = currentYear;
+      
+      // Calculate age dynamically (assuming birth year 1996)
+      const birthYear = 1996;
+      const age = currentYear - birthYear;
+      document.getElementById('age').textContent = age;
+    </script>
+    
+    <script src="./js/cookie-consent.js?v=2.0"></script>
     <script src="./js/main.js?v=2.0"></script>
 </body>
 </html>

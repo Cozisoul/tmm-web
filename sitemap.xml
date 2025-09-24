@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://thapelomasebe.com/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://thapelomasebe.com/assets/images/portfolio/bio/me-1.jpg</image:loc>
+      <image:title>Thapelo Madiba Masebe - Portrait</image:title>
+      <image:caption>Professional portrait of Thapelo Madiba Masebe, transdisciplinary artist and photographer</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Archive Page -->
+  <url>
+    <loc>https://thapelomasebe.com/archive.html</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Portfolio Images -->
+  <url>
+    <loc>https://thapelomasebe.com/assets/images/portfolio/documentary/life-as-it-happens-2.jpg</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://thapelomasebe.com/assets/images/portfolio/documentary/life-as-it-happens-2.jpg</image:loc>
+      <image:title>Life as it Happens - Documentary Photography</image:title>
+      <image:caption>Documentary photography capturing real moments and stories from the Fees Must Fall protests</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://thapelomasebe.com/assets/images/portfolio/portraiture/amaqamata-1.jpg</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://thapelomasebe.com/assets/images/portfolio/portraiture/amaqamata-1.jpg</image:loc>
+      <image:title>Amaqamata Series - Portraiture</image:title>
+      <image:caption>Intimate portraits exploring human emotion and connection in contemporary South Africa</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://thapelomasebe.com/assets/images/portfolio/fashion/vans-editorial-1.jpg</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://thapelomasebe.com/assets/images/portfolio/fashion/vans-editorial-1.jpg</image:loc>
+      <image:title>Vans Editorial - Fashion Photography</image:title>
+      <image:caption>Fashion photography and brand collaborations for major lifestyle brands</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://thapelomasebe.com/assets/images/portfolio/fine-art/reading-genesis-art-series-3.jpg</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://thapelomasebe.com/assets/images/portfolio/fine-art/reading-genesis-art-series-3.jpg</image:loc>
+      <image:title>Reading Genesis Series - Fine Art Photography</image:title>
+      <image:caption>Conceptual fine art exploring identity, memory, and society through visual storytelling</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://thapelomasebe.com/assets/images/portfolio/architecture/untitled-01-city-skyline-installation-1.jpg</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://thapelomasebe.com/assets/images/portfolio/architecture/untitled-01-city-skyline-installation-1.jpg</image:loc>
+      <image:title>City Skyline Installation - Architecture Photography</image:title>
+      <image:caption>Urban landscapes and architectural photography of Johannesburg's evolving cityscape</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://thapelomasebe.com/assets/images/portfolio/photovogue/0.jpg</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://thapelomasebe.com/assets/images/portfolio/photovogue/0.jpg</image:loc>
+      <image:title>PhotoVogue Featured Work</image:title>
+      <image:caption>17 photos featured on Vogue's prestigious platform including this black and white portrait</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://thapelomasebe.com/privacy-policy.html</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://thapelomasebe.com/cookie-consent.html</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- 404 Page -->
+  <url>
+    <loc>https://thapelomasebe.com/404.html</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  
+</urlset>
