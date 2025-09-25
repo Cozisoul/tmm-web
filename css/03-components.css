@@ -824,7 +824,7 @@
   font-size: 0.9rem;
   color: var(--clr-fg);
   line-height: 1.4;
-  padding-left: var(--space-sm);
+  padding-left: calc(var(--space-sm) + 12px);
   position: relative;
 }
 
@@ -833,6 +833,9 @@
   color: var(--clr-accent);
   position: absolute;
   left: 0;
+  top: 0;
+  width: 12px;
+  text-align: center;
 }
 
 /* ========================================

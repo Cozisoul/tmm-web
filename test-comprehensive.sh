@@ -123,13 +123,10 @@ check_file "sitemap.xml" "XML Sitemap"
 check_file "public/robots.txt" "Robots.txt"
 check_file "manifest.json" "Web App Manifest"
 
-# CSS files
-check_file "css/01-reset.css" "CSS Reset"
-check_file "css/02-vars.css" "CSS Variables"
-check_file "css/03-base.css" "Base CSS"
-check_file "css/04-layout.css" "Layout CSS"
-check_file "css/05-components.css" "Components CSS"
-check_file "css/06-animations.css" "Animations CSS"
+# CSS files (v5.0 Architecture)
+check_file "css/01-system.css" "System CSS"
+check_file "css/02-layout.css" "Layout CSS"
+check_file "css/03-components.css" "Components CSS"
 check_file "css/main.css" "Main CSS"
 
 # JavaScript files
@@ -314,14 +311,14 @@ else
 fi
 
 # Media queries in CSS
-if grep -q '@media' css/04-layout.css; then
+if grep -q '@media' css/02-layout.css; then
     print_result "Media queries" "PASS" "Media queries present in layout CSS"
 else
     print_result "Media queries" "FAIL" "Media queries missing in layout CSS"
 fi
 
 # Flexible units
-if grep -q 'clamp(' css/04-layout.css; then
+if grep -q 'clamp(' css/02-layout.css; then
     print_result "Flexible units" "PASS" "Clamp() functions used for responsive sizing"
 else
     print_result "Flexible units" "WARN" "Clamp() functions not found"
