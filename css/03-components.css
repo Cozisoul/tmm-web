@@ -665,6 +665,61 @@
   transform: translateY(-1px);
 }
 
+/* Archive Button */
+.archive-button {
+  background-color: transparent;
+  color: var(--clr-accent);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-family: var(--ff-annotation);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  border: 1px solid var(--clr-accent);
+  display: inline-block;
+  text-align: center;
+}
+
+.archive-button:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-bg);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 1000;
+  background-color: var(--clr-bg);
+  border: 2px solid var(--clr-accent);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-bg);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
 /* ========================================
    SOCIAL LINKS
    ======================================== */
@@ -907,6 +962,7 @@
   object-fit: contain;
   object-position: center;
   background-color: white;
+  border: 3px solid var(--clr-accent);
   transition: all var(--transition-medium);
   display: block;
   margin: 0 auto;
@@ -915,6 +971,8 @@
   min-height: 100px;
   max-width: 100px;
   max-height: 100px;
+  /* Make it straight - no stepped appearance */
+  box-shadow: 0 0 0 1px rgba(0, 0, 255, 0.1);
 }
 
 /* Alternative: Rectangular bio image to show more of the face */
