@@ -12,7 +12,7 @@
 
 .card {
   background-color: rgba(0, 0, 0, 0.02);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   padding: var(--space-lg);
   border-left: 3px solid var(--clr-accent);
   transition: all var(--transition-normal);

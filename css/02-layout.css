@@ -75,7 +75,7 @@
 .section {
   padding: var(--space-md);
   background-color: rgba(0, 0, 0, 0.02);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   border-left: 3px solid var(--clr-accent);
   transition: all var(--transition-normal);
   flex: 0 0 auto;
@@ -121,7 +121,7 @@
 
 .work-item {
   background-color: rgba(0, 0, 0, 0.02);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   padding: var(--space-lg);
   border-left: 3px solid var(--clr-accent);
   transition: all var(--transition-normal);
@@ -212,7 +212,7 @@
 .episode-item,
 .project-item {
   background-color: rgba(0, 0, 0, 0.02);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   padding: var(--space-md);
   border-left: 3px solid var(--clr-accent);
   transition: all var(--transition-normal);
