@@ -135,6 +135,8 @@ function showAnnotation(element) {
             html += `<a href="${data.link.url}" class="annotation-link" target="${data.link.target || '_self'}" rel="noopener noreferrer">${data.link.text}</a>`;
         }
         annotationContent.innerHTML = html;
+        // Prevent layout shift by using fixed positioning
+        annotationContent.style.position = 'fixed';
         console.log('Annotation content updated');
     } else {
         console.log('No data or annotationContent:', { data, annotationContent });

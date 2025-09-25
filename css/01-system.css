@@ -509,9 +509,18 @@ a:focus {
    ======================================== */
 
 .annotation-content {
-  position: sticky;
+  position: fixed;
   top: var(--space-xl);
+  right: var(--space-lg);
+  width: 300px;
+  max-width: 90vw;
+  z-index: 1000;
   transition: opacity var(--transition-normal);
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .annotation-content.is-loading {
