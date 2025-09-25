@@ -226,6 +226,14 @@ function initializeThemeToggle() {
   const themeIcon = document.getElementById('theme-icon');
   const body = document.body;
   
+  console.log('Theme toggle element:', themeToggle);
+  console.log('Theme icon element:', themeIcon);
+  
+  if (!themeToggle || !themeIcon) {
+    console.error('Theme toggle elements not found!');
+    return;
+  }
+  
   // Force light mode to maintain your design system
   const currentTheme = 'light';
   body.setAttribute('data-theme', currentTheme);
@@ -243,7 +251,9 @@ function initializeThemeToggle() {
   });
   
   function updateThemeIcon(theme) {
-    themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    if (themeIcon) {
+      themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    }
   }
 }
 
@@ -323,13 +333,13 @@ function initializeMobileOptimizations() {
   touchElements.forEach(element => {
     element.addEventListener('touchstart', () => {
       element.classList.add('touch-active');
-    });
+    }, { passive: true });
 
     element.addEventListener('touchend', () => {
       setTimeout(() => {
         element.classList.remove('touch-active');
       }, 150);
-    });
+    }, { passive: true });
   });
 
   console.log('Mobile optimizations initialized');
