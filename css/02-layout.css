@@ -99,16 +99,6 @@
   position: relative;
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background: var(--clr-accent);
-}
-
 /* ========================================
    WORK GALLERY - PROJECT SHOWCASE
    ======================================== */
