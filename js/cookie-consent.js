@@ -26,14 +26,96 @@ class CookieConsent {
             this.preferences = { ...this.preferences, ...savedConsent.preferences };
             this.applyConsent();
         } else {
-            // Show consent banner after a short delay
-            setTimeout(() => this.showConsentBanner(), 1000);
+            // Don't show blocking overlay immediately - let user interact with site
+            // Show a non-blocking notification instead
+            setTimeout(() => this.showNonBlockingNotification(), 3000);
         }
         
         // Listen for theme changes to update preferences
         this.setupThemeListener();
     }
     
+    showNonBlockingNotification() {
+        // Show a small notification instead of blocking overlay
+        if (document.getElementById('cookie-notification') || this.consentGiven) {
+            return;
+        }
+        
+        const notification = document.createElement('div');
+        notification.id = 'cookie-notification';
+        notification.innerHTML = `
+            <div class="cookie-notification">
+                <span><span class="material-icons">cookie</span> We use cookies to enhance your experience</span>
+                <button class="cookie-notification-btn" id="cookie-notification-btn">Settings</button>
+                <button class="cookie-notification-close" id="cookie-notification-close">×</button>
+            </div>
+        `;
+        
+        // Add notification styles
+        const styles = document.createElement('style');
+        styles.textContent = `
+            .cookie-notification {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: var(--clr-bg, #FFF8E7);
+                border: 2px solid var(--clr-accent, #0000FF);
+                border-radius: 8px;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                z-index: 9999;
+                max-width: 300px;
+                font-size: 0.875rem;
+            }
+            
+            .cookie-notification .material-icons {
+                font-size: 18px;
+                color: var(--clr-accent, #0000FF);
+            }
+            
+            .cookie-notification-btn {
+                background: var(--clr-accent, #0000FF);
+                color: var(--clr-bg, #FFF8E7);
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+            
+            .cookie-notification-close {
+                background: transparent;
+                border: none;
+                font-size: 1.2rem;
+                cursor: pointer;
+                color: var(--clr-muted, #666666);
+                padding: 0;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        `;
+        
+        document.head.appendChild(styles);
+        document.body.appendChild(notification);
+        
+        // Add event listeners
+        notification.querySelector('#cookie-notification-btn').addEventListener('click', () => {
+            notification.remove();
+            this.showConsentBanner();
+        });
+        
+        notification.querySelector('#cookie-notification-close').addEventListener('click', () => {
+            notification.remove();
+        });
+    }
+
     showConsentBanner() {
         // Don't show if already shown or consent given
         if (document.getElementById('cookie-consent-banner') || this.consentGiven) {
@@ -56,7 +138,7 @@ class CookieConsent {
             <div class="cookie-consent-overlay">
                 <div class="cookie-consent-modal">
                     <div class="cookie-consent-header">
-                        <h3>🍪 Cookie Preferences</h3>
+                        <h3><span class="material-icons">cookie</span> Cookie Preferences</h3>
                         <p>We use cookies to enhance your experience and analyze our traffic. Choose your preferences below.</p>
                     </div>
                     
@@ -171,6 +253,14 @@ class CookieConsent {
                 font-size: 1.5rem;
                 margin-bottom: 0.5rem;
                 color: var(--clr-text, #111111);
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .cookie-consent-header h3 .material-icons {
+                font-size: 1.5rem;
+                color: var(--clr-accent, #0000FF);
             }
             
             .cookie-consent-header p {
@@ -411,7 +501,7 @@ class CookieConsent {
         if (footer) {
             const settingsBtn = document.createElement('button');
             settingsBtn.id = 'cookie-settings-btn';
-            settingsBtn.innerHTML = '🍪 Cookie Settings';
+            settingsBtn.innerHTML = '<span class="material-icons">cookie</span> Cookie Settings';
             settingsBtn.className = 'cookie-settings-btn';
             settingsBtn.style.cssText = `
                 background: transparent;

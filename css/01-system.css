@@ -278,14 +278,14 @@ table {
    MANUAL DARK MODE TOGGLE
    ======================================== */
 
-/* [data-theme="dark"] {
+[data-theme="dark"] {
   --clr-bg: #111111;
   --clr-fg: #FFF8E7;
   --clr-muted: #888888;
   --clr-border: rgba(255, 248, 231, 0.2);
   --clr-accent: #FF4500;
   --clr-success: #00FF00;
-} */
+}
 
 [data-theme="light"] {
   --clr-bg: #FFF8E7;
@@ -510,11 +510,11 @@ a:focus {
 
 .annotation-content {
   position: fixed;
-  top: var(--space-xl);
+  top: calc(var(--space-xl) + 60px);
   right: var(--space-lg);
   width: 300px;
   max-width: 90vw;
-  z-index: 1000;
+  z-index: 999;
   transition: opacity var(--transition-normal);
   background: var(--clr-bg);
   border: 1px solid var(--clr-border);

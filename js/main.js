@@ -114,6 +114,8 @@ let activeAnnotation = null;
 let annotationContent = null;
 
 function showAnnotation(element) {
+    if (!element) return;
+    
     const key = element.getAttribute('data-annotation');
     const data = annotationData[key];
 
@@ -155,9 +157,14 @@ function hideAnnotation() {
 
 // Main application initialization
 document.addEventListener('DOMContentLoaded', () => {
+  try {
   // Initialize annotation system
   const annotationPanel = document.getElementById('annotation-panel');
-  annotationContent = annotationPanel.querySelector('.annotation-content');
+  if (annotationPanel) {
+    annotationContent = annotationPanel.querySelector('.annotation-content');
+  } else {
+    console.log('No annotation panel found - this is normal for archive page');
+  }
   const annotatedElements = document.querySelectorAll('[data-annotation]');
   
   console.log('Annotation elements found:', annotatedElements.length);
@@ -173,16 +180,14 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
 
-      // Touch events for mobile
+      // Click events for both desktop and mobile
       element.addEventListener('click', (e) => {
           console.log('Click event on:', element.getAttribute('data-annotation'));
-          if (window.innerWidth <= 768) {
-              e.preventDefault();
-              if (activeAnnotation === element) {
-                  hideAnnotation();
-              } else {
-                  showAnnotation(element);
-              }
+          e.preventDefault();
+          if (activeAnnotation === element) {
+              hideAnnotation();
+          } else {
+              showAnnotation(element);
           }
       });
 
@@ -192,9 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
-  // Hide annotation when clicking outside on mobile
+  // Hide annotation when clicking outside
   document.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768 && !e.target.closest('[data-annotation]') && !e.target.closest('.right-column')) {
+      if (!e.target.closest('[data-annotation]') && !e.target.closest('.right-column')) {
           hideAnnotation();
       }
   });
@@ -220,6 +225,28 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize dynamic responsiveness
   initializeDynamicResponsiveness();
+  
+  // Debug: Test archive button
+  const archiveButton = document.querySelector('.archive-button');
+  if (archiveButton) {
+    console.log('Archive button found:', archiveButton);
+    archiveButton.addEventListener('click', (e) => {
+      console.log('Archive button clicked!');
+    });
+  } else {
+    console.log('Archive button not found!');
+  }
+  
+  // Debug: Add click listener to document to see what's being clicked (temporarily disabled)
+  // document.addEventListener('click', (e) => {
+  //   console.log('Click detected on:', e.target);
+  //   console.log('Click target classes:', e.target.className);
+  //   console.log('Click target id:', e.target.id);
+  //   console.log('Click target tag:', e.target.tagName);
+  // });
+  } catch (error) {
+    console.error('Error initializing main application:', error);
+  }
 });
 
 // Theme Toggle Functionality
@@ -236,12 +263,21 @@ function initializeThemeToggle() {
     return;
   }
   
-  // Force light mode to maintain your design system
-  const currentTheme = 'light';
-  body.setAttribute('data-theme', currentTheme);
-  updateThemeIcon(currentTheme);
+  function updateThemeIcon(theme) {
+    if (themeIcon) {
+      themeIcon.textContent = theme === 'light' ? 'dark_mode' : 'light_mode';
+    }
+  }
   
-  themeToggle.addEventListener('click', () => {
+  // Load saved theme or default to light
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  body.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+  
+  themeToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Theme toggle clicked!');
     const currentTheme = body.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
@@ -251,12 +287,6 @@ function initializeThemeToggle() {
     
     console.log('Theme switched to:', newTheme);
   });
-  
-  function updateThemeIcon(theme) {
-    if (themeIcon) {
-      themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-    }
-  }
 }
 
 // Enhanced Smooth Scrolling
@@ -450,7 +480,7 @@ function initializeDynamicResponsiveness() {
         // Update theme icon if it exists
         const themeIcon = document.getElementById('theme-icon');
         if (themeIcon) {
-          themeIcon.textContent = newTheme === 'light' ? '🌙' : '☀️';
+          themeIcon.textContent = newTheme === 'light' ? 'dark_mode' : 'light_mode';
         }
         
         console.log('Theme toggled to:', newTheme);

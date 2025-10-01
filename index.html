@@ -4,13 +4,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0,user-scalable=yes,viewport-fit=cover">
     <title>Thapelo Madiba Masebe | Transdisciplinary Artist & Photographer</title>
     <meta name="description" content="Thapelo Madiba Masebe - South African transdisciplinary artist, photographer, and creative technologist. Documenting life through photography since 2014.">
     <meta name="keywords" content="Thapelo Masebe, photographer, South African photographer, documentary photography, portraiture, fashion photography, fine art photography, architecture photography, PhotoVogue, Johannesburg photographer, transdisciplinary artist, creative technologist, Fees Must Fall, photojournalism">
     <meta name="theme-color" content="#FFF8E7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Thapelo Masebe">
     <meta name="format-detection" content="telephone=no">
@@ -102,8 +103,7 @@
     </style>
     
     <!-- Load CSS immediately -->
-    <link rel="stylesheet" href="./css/main.css?v=2.0">
-    <link rel="stylesheet" href="./css/03-components.css?v=2.0">
+    <link rel="stylesheet" href="./css/main.css?v=2.4">
     
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,9 +113,9 @@
 <body class="smooth-scroll" data-theme="light">
 
     <!-- Theme Toggle -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <span id="theme-icon">🌙</span>
-    </button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="material-icons" id="theme-icon">dark_mode</span>
+        </button>
 
     <main class="cv-container smooth-scroll">
         
@@ -177,7 +177,7 @@
             </section>
 
             <section class="archive-section">
-                <a href="archive.html" class="archive-button" onclick="console.log('Archive button clicked!'); return true;">Complete Archive →</a>
+                <a href="archive.html" class="archive-button">Complete Archive →</a>
             </section>
         </aside>
 
@@ -425,7 +425,10 @@
                 <div class="footer-brand">
                     <h3 class="footer-name">Thapelo Madiba Masebe</h3>
                     <p class="footer-subtitle">Transdisciplinary Artist, Photographer & Creative Technologist</p>
-                    <p class="footer-location">Johannesburg, South Africa</p>
+                    <p class="footer-location">
+                        <span class="material-icons">location_on</span>
+                        Johannesburg, South Africa
+                    </p>
                 </div>
                 <div class="footer-copyright">
                     <p>&copy; <span id="current-year">2024</span> Thapelo Madiba Masebe. All rights reserved.</p>
@@ -435,35 +438,77 @@
             <div class="footer-right">
                 <div class="footer-sections">
                     <div class="footer-section">
-                        <h4 class="footer-section-title">Portfolio</h4>
+                        <h4 class="footer-section-title">
+                            <span class="material-icons">work</span>
+                            Portfolio
+                        </h4>
                         <div class="footer-links">
-                            <a href="./archive.html">Archive</a>
-                            <a href="mailto:thapelomasebe@hotmail.com">Contact</a>
-                            <a href="#" onclick="window.print()">Print CV</a>
+                            <a href="./archive.html">
+                                <span class="material-icons">archive</span>
+                                Archive
+                            </a>
+                            <a href="mailto:thapelomasebe@hotmail.com">
+                                <span class="material-icons">email</span>
+                                Contact
+                            </a>
+                            <a href="#" onclick="window.print()">
+                                <span class="material-icons">print</span>
+                                Print CV
+                            </a>
                         </div>
                     </div>
                     <div class="footer-section">
-                        <h4 class="footer-section-title">Platforms</h4>
+                        <h4 class="footer-section-title">
+                            <span class="material-icons">share</span>
+                            Platforms
+                        </h4>
                         <div class="footer-links">
-                            <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                            <a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer">Behance</a>
-                            <a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer">PhotoVogue</a>
+                            <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer">
+                                <span class="material-icons">photo_camera</span>
+                                Instagram
+                            </a>
+                            <a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer">
+                                <span class="material-icons">palette</span>
+                                Behance
+                            </a>
+                            <a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer">
+                                <span class="material-icons">star</span>
+                                PhotoVogue
+                            </a>
                         </div>
                     </div>
                     <div class="footer-section">
-                        <h4 class="footer-section-title">Technical</h4>
+                        <h4 class="footer-section-title">
+                            <span class="material-icons">settings</span>
+                            Technical
+                        </h4>
                         <div class="footer-links">
-                            <a href="#" onclick="toggleTheme()">Toggle Theme</a>
-                            <a href="#" onclick="window.scrollTo(0,0)">Back to Top</a>
+                            <a href="#" onclick="toggleTheme()">
+                                <span class="material-icons">brightness_6</span>
+                                Toggle Theme
+                            </a>
+                            <a href="#" onclick="window.scrollTo(0,0)">
+                                <span class="material-icons">keyboard_arrow_up</span>
+                                Back to Top
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="footer-tech">
-                    <span>Built with HTML5, CSS3, JavaScript</span>
+                    <span>
+                        <span class="material-icons">code</span>
+                        Built with HTML5, CSS3, JavaScript
+                    </span>
                     <span class="footer-separator">•</span>
-                    <span>Responsive Design</span>
+                    <span>
+                        <span class="material-icons">responsive</span>
+                        Responsive Design
+                    </span>
                     <span class="footer-separator">•</span>
-                    <span>Mobile-First</span>
+                    <span>
+                        <span class="material-icons">phone_android</span>
+                        Mobile-First
+                    </span>
                 </div>
             </div>
         </div>
@@ -521,7 +566,7 @@
       document.getElementById('age').textContent = age;
     </script>
     
-    <script src="./js/cookie-consent.js?v=2.0"></script>
-    <script src="./js/main.js?v=2.0"></script>
+    <script src="./js/cookie-consent.js?v=2.4"></script>
+    <script src="./js/main.js?v=2.4"></script>
 </body>
 </html>

@@ -12,8 +12,10 @@
 .archive-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--space-lg);
+  padding: var(--space-lg, 2rem);
   min-height: 100vh;
+  background-color: var(--clr-bg, #FFF8E7);
+  color: var(--clr-text, #111111);
 }
 
 /* ========================================
@@ -24,9 +26,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-md) var(--space-lg);
-  border-bottom: 1px solid var(--clr-border);
-  background-color: var(--clr-bg);
+  padding: var(--space-md, 1rem) var(--space-lg, 2rem);
+  border-bottom: 1px solid var(--clr-border, #E5E5E5);
+  background-color: var(--clr-bg, #FFF8E7);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -39,6 +41,15 @@
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.nav-link .material-icons {
+  font-size: 18px;
+  color: var(--clr-accent);
+  transition: color var(--transition-fast);
 }
 
 .nav-link:hover {
@@ -521,4 +532,64 @@
 [data-theme="dark"] .skill-category:hover,
 [data-theme="dark"] .integration-item:hover {
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Comprehensive dark mode support for archive page */
+[data-theme="dark"] .archive-nav {
+  background-color: var(--clr-bg);
+  border-bottom-color: var(--clr-border);
+}
+
+[data-theme="dark"] .archive-title {
+  color: var(--clr-fg);
+}
+
+[data-theme="dark"] .archive-subtitle {
+  color: var(--clr-muted);
+}
+
+[data-theme="dark"] .section-title {
+  color: var(--clr-fg);
+}
+
+[data-theme="dark"] .archive-description {
+  color: var(--clr-muted);
+}
+
+[data-theme="dark"] .stat-number {
+  color: var(--clr-accent);
+}
+
+[data-theme="dark"] .stat-label {
+  color: var(--clr-muted);
+}
+
+[data-theme="dark"] .archive-item h3 {
+  color: var(--clr-fg);
+}
+
+[data-theme="dark"] .archive-item p {
+  color: var(--clr-muted);
+}
+
+[data-theme="dark"] .archive-item .archive-meta {
+  color: var(--clr-muted);
+}
+
+[data-theme="dark"] .skill-category h4,
+[data-theme="dark"] .integration-item h4 {
+  color: var(--clr-fg);
+}
+
+[data-theme="dark"] .skill-category p,
+[data-theme="dark"] .integration-item p {
+  color: var(--clr-muted);
+}
+
+[data-theme="dark"] .philosophy-title {
+  color: var(--clr-fg);
+}
+
+[data-theme="dark"] .philosophy-item p {
+  color: var(--clr-muted);
 }
