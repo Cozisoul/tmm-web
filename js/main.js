@@ -504,4 +504,123 @@ if ('IntersectionObserver' in window) {
     const sections = document.querySelectorAll('section, aside');
     sections.forEach(section => observer.observe(section));
   });
+});
+
+// Creative Domain Navigation & Interactions
+function initializeDomainNavigation() {
+  const domainNavItems = document.querySelectorAll('.domain-nav-item');
+
+  domainNavItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const targetId = item.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        // Add visual feedback
+        item.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          item.style.transform = '';
+        }, 150);
+
+        // Smooth scroll to section with custom easing
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        });
+
+        // Add temporary highlight to target section
+        targetSection.style.outline = '2px solid var(--clr-accent)';
+        targetSection.style.outlineOffset = '4px';
+        setTimeout(() => {
+          targetSection.style.outline = '';
+          targetSection.style.outlineOffset = '';
+        }, 2000);
+      }
+    });
+  });
+
+  // Add intersection observer for section highlighting
+  if ('IntersectionObserver' in window) {
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.domain-nav-item');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Remove active state from all nav items
+          navItems.forEach(navItem => {
+            navItem.classList.remove('active');
+          });
+
+          // Add active state to corresponding nav item
+          const activeNavItem = document.querySelector(`.domain-nav-item[href="#${entry.target.id}"]`);
+          if (activeNavItem) {
+            activeNavItem.classList.add('active');
+          }
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '-20% 0px -70% 0px'
+    });
+
+    sections.forEach(section => sectionObserver.observe(section));
+  }
+
+  // Add sophisticated hover effects for domain cards
+  initializeDomainCardInteractions();
+}
+
+// Advanced Domain Card Interactions
+function initializeDomainCardInteractions() {
+  const domainCards = document.querySelectorAll('.domain-exhibition');
+
+  domainCards.forEach(card => {
+    const icon = card.querySelector('.exhibition-icon');
+    const title = card.querySelector('.exhibition-title');
+
+    // Add magnetic hover effect
+    card.addEventListener('mousemove', (e) => {
+      if (window.innerWidth > 768) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+
+    // Add click ripple effect
+    card.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      const rect = card.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      ripple.classList.add('ripple-effect');
+
+      card.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
 }

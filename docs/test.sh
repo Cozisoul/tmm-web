@@ -73,15 +73,15 @@ test_images() {
     echo -e "${YELLOW}🖼️  Testing Images${NC}"
     
     # Test bio image
-    run_test "Bio image loads" "curl -s -f http://localhost:$LOCAL_PORT/assets/images/portfolio/bio/me-1.jpg"
+    run_test "Bio image loads" "curl -s -I -f http://localhost:$LOCAL_PORT/assets/images/portfolio/bio/me-1.jpg"
     
     # Test portfolio images
-    run_test "Documentary image loads" "curl -s -f http://localhost:$LOCAL_PORT/assets/images/portfolio/documentary/life-as-it-happens-2.jpg"
-    run_test "Portraiture image loads" "curl -s -f http://localhost:$LOCAL_PORT/assets/images/portfolio/portraiture/amaqamata-1.jpg"
-    run_test "Fashion image loads" "curl -s -f http://localhost:$LOCAL_PORT/assets/images/portfolio/fashion/vans-editorial-1.jpg"
-    run_test "Fine art image loads" "curl -s -f http://localhost:$LOCAL_PORT/assets/images/portfolio/fine-art/reading-genesis-art-series-3.jpg"
-    run_test "Architecture image loads" "curl -s -f http://localhost:$LOCAL_PORT/assets/images/portfolio/architecture/untitled-01-city-skyline-installation-1.jpg"
-    run_test "PhotoVogue image loads" "curl -s -f http://localhost:$LOCAL_PORT/assets/images/portfolio/photovogue/0.jpg"
+    run_test "Documentary image loads" "curl -s -I -f http://localhost:$LOCAL_PORT/assets/images/portfolio/documentary/life-as-it-happens-2.jpg"
+    run_test "Portraiture image loads" "curl -s -I -f http://localhost:$LOCAL_PORT/assets/images/portfolio/portraiture/amaqamata-1.jpg"
+    run_test "Fashion image loads" "curl -s -I -f http://localhost:$LOCAL_PORT/assets/images/portfolio/fashion/vans-editorial-1.jpg"
+    run_test "Fine art image loads" "curl -s -I -f http://localhost:$LOCAL_PORT/assets/images/portfolio/fine-art/reading-genesis-art-series-3.jpg"
+    run_test "Architecture image loads" "curl -s -I -f http://localhost:$LOCAL_PORT/assets/images/portfolio/architecture/untitled-01-city-skyline-installation-1.jpg"
+    run_test "PhotoVogue image loads" "curl -s -I -f http://localhost:$LOCAL_PORT/assets/images/portfolio/photovogue/0.jpg"
 }
 
 # Function to test external links
@@ -220,7 +220,7 @@ test_javascript() {
     run_test "Smooth scrolling classes" "curl -s http://localhost:$LOCAL_PORT | grep -q 'smooth-scroll'"
     
     # Test project tags
-    run_test "Project tags present" "curl -s http://localhost:$LOCAL_PORT | grep -q 'project-tags'"
+    run_test "Project tags present" "curl -s http://localhost:$LOCAL_PORT | grep -q 'card-tags'"
 }
 
 # Function to test CSS
@@ -284,7 +284,17 @@ start_server() {
         echo -e "${GREEN}✅ Server already running on port $LOCAL_PORT${NC}"
     else
         echo -e "${BLUE}Starting Python HTTP server...${NC}"
-        python3 -m http.server $LOCAL_PORT &
+        # Try python3, then python, then py (Windows launcher)
+        if command -v python3 >/dev/null 2>&1; then
+            python3 -m http.server $LOCAL_PORT &
+        elif command -v python >/dev/null 2>&1; then
+            python -m http.server $LOCAL_PORT &
+        elif command -v py >/dev/null 2>&1; then
+            py -m http.server $LOCAL_PORT &
+        else
+            echo -e "${RED}❌ No Python interpreter found (python3/python/py)${NC}"
+            exit 1
+        fi
         SERVER_PID=$!
         sleep 3
         

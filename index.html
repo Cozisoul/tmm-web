@@ -15,24 +15,24 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Thapelo Masebe">
     <meta name="format-detection" content="telephone=no">
-    
+
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thapelomasebe.com/">
     <meta property="og:title" content="Thapelo Madiba Masebe | Transdisciplinary Artist & Photographer">
     <meta property="og:description" content="South African transdisciplinary artist, photographer, and creative technologist. Documenting life through photography since 2014.">
     <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%23FFF8E7'/><text x='600' y='315' text-anchor='middle' font-size='120' fill='%23111111'>Thapelo Masebe</text><text x='600' y='400' text-anchor='middle' font-size='40' fill='%23666666'>Transdisciplinary Artist & Photographer</text></svg>">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thapelomasebe.com/">
     <meta property="twitter:title" content="Thapelo Madiba Masebe | Transdisciplinary Artist & Photographer">
     <meta property="twitter:description" content="South African transdisciplinary artist, photographer, and creative technologist. Documenting life through photography since 2014.">
     <meta property="twitter:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'><rect width='1200' height='630' fill='%23FFF8E7'/><text x='600' y='315' text-anchor='middle' font-size='120' fill='%23111111'>Thapelo Masebe</text><text x='600' y='400' text-anchor='middle' font-size='40' fill='%23666666'>Transdisciplinary Artist & Photographer</text></svg>">
-    
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -60,12 +60,12 @@
       "award": "Best of PhotoVogue Selection"
     }
     </script>
-    
+
     <!-- Favicon and app icons -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📸</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📸</text></svg>">
     <link rel="manifest" href="/manifest.json">
-    
+
     <!-- Critical CSS -->
     <style>
       /* Critical above-the-fold styles */
@@ -101,10 +101,11 @@
         .contact-list li,.social-list li,.skills-list li,.awards-list li{font-size:clamp(11px,3vw,15px)}
       }
     </style>
-    
+
     <!-- Load CSS immediately -->
+    <!-- reference: 03-components.css present via @import in css/main.css -->
     <link rel="stylesheet" href="./css/main.css?v=2.4">
-    
+
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,319 +113,495 @@
 </head>
 <body class="smooth-scroll" data-theme="light">
 
-    <!-- Theme Toggle -->
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-            <span class="material-icons" id="theme-icon">dark_mode</span>
-        </button>
+    <!-- [NOTICE BAR] The Systematic–Poetic -->
+    <div class="notice-bar" aria-hidden="true">
+      <div class="notice-bar__inner">
+        <div class="notice-bar__text">[The Systematic–Poetic]</div>
+        <div class="notice-bar__tag">TMM–OS</div>
+      </div>
+    </div>
 
-    <main class="cv-container smooth-scroll">
-        
-        <aside class="left-column smooth-scroll" role="complementary" aria-label="Contact and personal information">
-            <header class="identity-header">
-                <div class="bio-image">
-                    <img src="./assets/images/portfolio/bio/me-1.jpg" 
-                         alt="Thapelo Madiba Masebe - Portrait" 
-                         class="profile-photo"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="profile-photo-fallback" style="display: none !important;">
-                        <div class="profile-initials">TM</div>
-                    </div>
-                </div>
-                <h1 class="name">Thapelo Madiba Masebe</h1>
-                <p class="title">Transdisciplinary Artist, Photographer & Creative Technologist</p>
-                <p class="age-location"><span id="age">28</span> years old • Johannesburg, South Africa</p>
-            </header>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-            <section class="contact-info">
-                <h2 class="section-title">Contact</h2>
-                <ul class="contact-list">
-                    <li><a href="mailto:thapelomasebe@hotmail.com">thapelomasebe@hotmail.com</a></li>
-                    <li>Johannesburg, South Africa</li>
-                </ul>
-            </section>
+    <!-- [HERO] -->
+    <header class="display-hero" role="banner">
+      <div class="display-hero__inner">
+        <div class="hero-eyebrow">[Data Scientist × Creative Technologist]</div>
+        <h1 class="hero-title">Thapelo Madiba<br>Masebe</h1>
+        <p class="hero-subtitle">Machine learning algorithms dance with photographic narratives. Data-driven creativity meets visual storytelling. Building TMM–OS: where systematic engineering meets poetic expression.</p>
 
-            <section class="social-links">
-                <h2 class="section-title">Connect</h2>
-                <ul class="social-list">
-                    <li><a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer">Instagram @thapelo_gv72</a></li>
-                    <li><a href="https://www.instagram.com/thaporaphy/" target="_blank" rel="noopener noreferrer">Instagram @thaporaphy</a></li>
-                    <li><a href="https://www.instagram.com/72film/" target="_blank" rel="noopener noreferrer">Instagram @72film</a></li>
-                    <li><a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer">Behance Portfolio</a></li>
-                    <li><a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer">PhotoVogue Profile</a></li>
-                    <li><a href="https://za.pinterest.com/thapelomasebe/" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
-                </ul>
-            </section>
-
-            <section class="skills">
-                <h2 class="section-title">Skills</h2>
-                <ul class="skills-list">
-                    <li>Photography (Documentary, Portrait, Fashion, Fine Art, Architecture)</li>
-                    <li>Photojournalism</li>
-                    <li>Visual Storytelling</li>
-                    <li>Creative Direction</li>
-                    <li>Digital Art</li>
-                    <li>Brand Collaboration</li>
-                </ul>
-            </section>
-
-            <section class="awards">
-                <h2 class="section-title">Recognition</h2>
-                <ul class="awards-list">
-                    <li>PhotoVogue "Best of PhotoVogue" Selection</li>
-                    <li>17 Photos Featured on PhotoVogue</li>
-                    <li>Vogue Platform Recognition</li>
-                </ul>
-            </section>
-
-            <section class="archive-section">
-                <a href="archive.html" class="archive-button">Complete Archive →</a>
-            </section>
-        </aside>
-
-        <section class="middle-column smooth-scroll" role="main" aria-label="Professional summary and experience">
-            <h2 class="section-title">About</h2>
-            <p>I am a <strong data-annotation="transdisciplinary" tabindex="0" role="button" aria-label="Learn about transdisciplinary practice">transdisciplinary artist</strong> and <strong data-annotation="photographer" tabindex="0" role="button" aria-label="Learn about photography practice">photographer</strong> based in Johannesburg, South Africa. My journey began in 2014 during high school, initially focusing on automotive photography alongside my cousin before transitioning to portraiture. In 2016, during my first year at university, I joined the university newspaper and documented the historic "Fees Must Fall" protests, which taught me the profound importance of storytelling through photography.</p>
-
-            <p>My work spans multiple genres including <strong data-annotation="documentary" tabindex="0" role="button" aria-label="Learn about documentary photography">documentary</strong>, <strong data-annotation="portraiture" tabindex="0" role="button" aria-label="Learn about portraiture">portraiture</strong>, <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">fashion</strong>, <strong data-annotation="fine-art" tabindex="0" role="button" aria-label="Learn about fine art photography">fine art</strong>, and <strong data-annotation="architecture" tabindex="0" role="button" aria-label="Learn about architecture photography">architecture photography</strong>. I believe in the power of visual storytelling to capture moments, emotions, and narratives that words cannot express.</p>
-
-            <h2 class="section-title">Photography Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3 class="timeline-year">2014</h3>
-                    <h4 class="timeline-title">Beginning</h4>
-                    <p>Started photography journey in high school, focusing on automotive photography with my cousin.</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <h3 class="timeline-year">2016</h3>
-                    <h4 class="timeline-title">University & Photojournalism</h4>
-                    <p>Joined university newspaper and documented the "Fees Must Fall" protests, learning the importance of storytelling through photography.</p>
-                </div>
-                
-                <div class="timeline-item">
-                    <h3 class="timeline-year">2017-<span id="current-year-timeline">2024</span></h3>
-                    <h4 class="timeline-title">Professional Development</h4>
-                    <p>Expanded into multiple photography genres, built portfolio across platforms, and gained recognition on PhotoVogue.</p>
-                </div>
+        <!-- [CREATIVE DOMAINS NAVIGATION] -->
+        <nav class="domains-navigation">
+          <a href="#data-science" class="domain-nav-item" data-domain="data-science">
+            <div class="domain-nav-icon">
+              <span class="material-icons">psychology</span>
             </div>
-
-            <h2 class="section-title">Photography Genres</h2>
-            <div class="genres-grid">
-                <div class="genre-item">
-                    <h3>Documentary</h3>
-                    <p>Capturing real moments and stories, including the historic Fees Must Fall protests and social movements.</p>
-                </div>
-                
-                <div class="genre-item">
-                    <h3>Portraiture</h3>
-                    <p>Intimate and compelling portraits that reveal the essence of the human experience.</p>
-                </div>
-                
-                <div class="genre-item">
-                    <h3>Fashion</h3>
-                    <p>Collaborative work with fashion brands and creative direction for editorial shoots.</p>
-                </div>
-                
-                <div class="genre-item">
-                    <h3>Fine Art</h3>
-                    <p>Conceptual and artistic photography that explores themes of identity, memory, and society.</p>
-                </div>
-                
-                <div class="genre-item">
-                    <h3>Architecture</h3>
-                    <p>Urban landscapes and architectural photography that captures the essence of Johannesburg and beyond.</p>
-                </div>
+            <div class="domain-nav-content">
+              <h3 class="domain-nav-title">Data Science</h3>
+              <p class="domain-nav-subtitle">Machine Learning at Ogilvy</p>
             </div>
+            <div class="domain-nav-indicator"></div>
+          </a>
 
-            <h2 class="section-title">Platform Presence</h2>
-            <div class="platforms">
-                <div class="platform-item">
-                    <h3>PhotoVogue</h3>
-                    <p>17 photos featured with one "Best of PhotoVogue" selection, showcasing my work on Vogue's prestigious platform.</p>
-                    <a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer" class="platform-link">View Profile →</a>
-                </div>
-                
-                <div class="platform-item">
-                    <h3>Behance</h3>
-                    <p>Professional portfolio showcasing curated projects and creative collaborations.</p>
-                    <a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer" class="platform-link">View Portfolio →</a>
-                </div>
-                
-                <div class="platform-item">
-                    <h3>Instagram</h3>
-                    <p>Multiple accounts documenting my photography journey: @thapelo_gv72, @thaporaphy, @72film</p>
-                    <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer" class="platform-link">Follow @thapelo_gv72 →</a>
+          <a href="#photography" class="domain-nav-item" data-domain="photography">
+            <div class="domain-nav-icon">
+              <span class="material-icons">camera_alt</span>
             </div>
+            <div class="domain-nav-content">
+              <h3 class="domain-nav-title">Photography</h3>
+              <p class="domain-nav-subtitle">Commercial & Documentary</p>
+            </div>
+            <div class="domain-nav-indicator"></div>
+          </a>
+
+          <a href="#tmm-os" class="domain-nav-item" data-domain="tmm-os">
+            <div class="domain-nav-icon">
+              <span class="material-icons">memory</span>
+            </div>
+            <div class="domain-nav-content">
+              <h3 class="domain-nav-title">TMM–OS</h3>
+              <p class="domain-nav-subtitle">Design System Architecture</p>
+            </div>
+            <div class="domain-nav-indicator"></div>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- [NAVIGATION BAR] -->
+    <nav class="main-navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <a href="/" class="nav-home" aria-label="Go to homepage">
+          <span class="material-icons">home</span>
+          <span class="nav-text">Home</span>
+        </a>
+        <div class="nav-info">
+          <span class="nav-location">
+            <span class="material-icons">location_on</span>
+            Johannesburg, South Africa
+          </span>
+          <span class="nav-date" id="current-date"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- [MARQUEE] -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item"><span class="marquee__dot"></span> Data Science</span>
+        <span class="marquee__item"><span class="marquee__dot"></span> Photography</span>
+        <span class="marquee__item"><span class="marquee__dot"></span> TMM–OS</span>
+        <span class="marquee__item"><span class="marquee__dot"></span> Machine Learning</span>
+        <span class="marquee__item"><span class="marquee__dot"></span> Creative Technology</span>
+        <!-- duplicate for smooth loop -->
+        <span class="marquee__item"><span class="marquee__dot"></span> Data Science</span>
+        <span class="marquee__item"><span class="marquee__dot"></span> Photography</span>
+        <span class="marquee__item"><span class="marquee__dot"></span> TMM–OS</span>
+        <span class="marquee__item"><span class="marquee__dot"></span> Machine Learning</span>
+        <span class="marquee__item"><span class="marquee__dot"></span> Creative Technology</span>
+      </div>
+    </div>
+
+    <!-- [THEME TOGGLE] -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <span class="material-icons" id="theme-icon">dark_mode</span>
+    </button>
+
+    <!-- [MAIN] -->
+    <main id="main-content" class="single-page-exhibition">
+
+        <!-- [ABOUT SECTION] -->
+        <section class="exhibition-about">
+            <div class="container">
+                <div class="about-content">
+                    <p class="about-intro">I am a <strong data-annotation="data-scientist" tabindex="0" role="button" aria-label="Learn about data science practice">Data Scientist</strong> at <strong data-annotation="ogilvy" tabindex="0" role="button" aria-label="Learn about Ogilvy South Africa">Ogilvy South Africa</strong> and a commercial <strong data-annotation="photographer" tabindex="0" role="button" aria-label="Learn about photography practice">photographer</strong> specializing in major brand campaigns. My <strong data-annotation="transdisciplinary" tabindex="0" role="button" aria-label="Learn about transdisciplinary practice">transdisciplinary practice</strong> bridges data science and creative technology, building the TMM–OS design system while documenting life through photography.</p>
+
+                    <p>Currently applying <strong data-annotation="python" tabindex="0" role="button" aria-label="Learn about Python programming">Python</strong>, <strong data-annotation="tensorflow" tabindex="0" role="button" aria-label="Learn about TensorFlow">TensorFlow</strong>, and machine learning to real-world client challenges at Ogilvy, while maintaining commercial photography work for global brands including <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">Vans</strong>, <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">Sportscene</strong>, <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">Cotton On</strong>, and <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">Viktor & Rolf</strong>. I believe in the power of data-driven creativity to solve complex problems and tell compelling visual stories.</p>
+                </div>
             </div>
         </section>
 
-        <aside id="annotation-panel" class="right-column smooth-scroll" role="complementary" aria-label="Interactive annotations and additional information">
-            <div class="annotation-content">
-                <p class="placeholder">* Tap on a highlighted term for context.</p>
-            </div>
-            
-            <!-- Photography Portfolio Highlights -->
-            <section class="portfolio-highlights">
-                <h2 class="section-title">Portfolio Highlights</h2>
-                
-                <div class="highlight-item">
-                    <h3>Fees Must Fall Documentation</h3>
-                    <p>Historic photojournalism capturing the student protests that shaped South African higher education.</p>
-                    <div class="highlight-tags">
-                        <span class="tag">Documentary</span>
-                        <span class="tag">Photojournalism</span>
-                        <span class="tag">Social Movement</span>
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <h3>PhotoVogue Recognition</h3>
-                    <p>17 photos featured on Vogue's prestigious photography platform, with one "Best of PhotoVogue" selection.</p>
-                    <div class="highlight-tags">
-                        <span class="tag">Recognition</span>
-                        <span class="tag">Vogue</span>
-                        <span class="tag">International</span>
-                    </div>
-                </div>
-                
-                <div class="highlight-item">
-                    <h3>Multi-Genre Portfolio</h3>
-                    <p>Diverse body of work spanning documentary, portraiture, fashion, fine art, and architecture.</p>
-                    <div class="highlight-tags">
-                        <span class="tag">Diverse</span>
-                        <span class="tag">Professional</span>
-                        <span class="tag">Versatile</span>
-                    </div>
-                </div>
-            </section>
+        <!-- [SELECTED WORKS MOSAIC] -->
+        <section id="selected-works" class="selected-works-exhibition">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">[Selected Works]</h2>
+                    <p class="section-subtitle">A curated selection spanning documentary, portraiture, fashion, fine art, and architecture</p>
+                </header>
 
-            <!-- Portfolio Gallery -->
-            <section class="portfolio-gallery">
-                <h2 class="section-title">Portfolio</h2>
-                <div class="image-gallery">
-                    <div class="gallery-item">
-                        <div class="image-placeholder">
-                            <img src="./assets/images/portfolio/documentary/life-as-it-happens-2.jpg" 
-                                 alt="Documentary photography - Life as it happens" 
-                                 style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="exhibition-grid">
+                    <article class="exhibition-card" data-category="documentary">
+                        <div class="card-media">
+                            <img src="./assets/images/portfolio/documentary/life-as-it-happens-2.jpg"
+                                 alt="Life as it Happens - Documentary photography"
+                                 loading="lazy" decoding="async">
                         </div>
-                        <div class="gallery-caption">
-                            <h4>Life as it Happens</h4>
-                            <p>Documentary photography capturing real moments and stories from the Fees Must Fall protests</p>
-                            <div class="project-tags">
+                        <div class="card-info">
+                            <h3 class="card-title">Life as it Happens</h3>
+                            <p class="card-category">[Documentary]</p>
+                            <p class="card-description">Historic photojournalism capturing the Fees Must Fall protests</p>
+                            <div class="card-tags">
                                 <span class="tag">Documentary</span>
-                                <span class="tag">Social Justice</span>
+                                <span class="tag">Photojournalism</span>
                             </div>
-                            <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer">View on Instagram →</a>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <div class="image-placeholder">
-                            <img src="./assets/images/portfolio/portraiture/amaqamata-1.jpg" 
-                                 alt="Portraiture - Amaqamata series" 
-                                 style="width: 100%; height: 100%; object-fit: cover;">
+                    </article>
+
+                    <article class="exhibition-card" data-category="portraiture">
+                        <div class="card-media">
+                            <img src="./assets/images/portfolio/portraiture/amaqamata-1.jpg"
+                                 alt="Amaqamata Series - Portrait photography"
+                                 loading="lazy" decoding="async">
                         </div>
-                        <div class="gallery-caption">
-                            <h4>Amaqamata Series</h4>
-                            <p>Intimate portraits exploring human emotion and connection in contemporary South Africa</p>
-                            <div class="project-tags">
+                        <div class="card-info">
+                            <h3 class="card-title">Amaqamata Series</h3>
+                            <p class="card-category">[Portraiture]</p>
+                            <p class="card-description">Intimate portraits exploring human emotion and connection</p>
+                            <div class="card-tags">
                                 <span class="tag">Portraiture</span>
                                 <span class="tag">Identity</span>
                             </div>
-                            <a href="https://www.instagram.com/thaporaphy/" target="_blank" rel="noopener noreferrer">View @thaporaphy →</a>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <div class="image-placeholder">
-                            <img src="./assets/images/portfolio/fashion/vans-editorial-1.jpg" 
-                                 alt="Fashion photography - Vans editorial" 
-                                 style="width: 100%; height: 100%; object-fit: cover;">
+                    </article>
+
+                    <article class="exhibition-card" data-category="fashion">
+                        <div class="card-media">
+                            <img src="./assets/images/portfolio/fashion/vans-editorial-1.jpg"
+                                 alt="Vans Editorial - Fashion photography"
+                                 loading="lazy" decoding="async">
                         </div>
-                        <div class="gallery-caption">
-                            <h4>Vans Editorial</h4>
-                            <p>Fashion photography and brand collaborations for major lifestyle brands</p>
-                            <div class="project-tags">
+                        <div class="card-info">
+                            <h3 class="card-title">Vans Editorial</h3>
+                            <p class="card-category">[Fashion]</p>
+                            <p class="card-description">Brand collaborations for major lifestyle brands</p>
+                            <div class="card-tags">
                                 <span class="tag">Fashion</span>
                                 <span class="tag">Editorial</span>
                             </div>
-                            <a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer">View on Behance →</a>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <div class="image-placeholder">
-                            <img src="./assets/images/portfolio/fine-art/reading-genesis-art-series-3.jpg" 
-                                 alt="Fine art photography - Reading Genesis series" 
-                                 style="width: 100%; height: 100%; object-fit: cover;">
+                    </article>
+
+                    <article class="exhibition-card" data-category="fine-art">
+                        <div class="card-media">
+                            <img src="./assets/images/portfolio/fine-art/reading-genesis-art-series-3.jpg"
+                                 alt="Reading Genesis Series - Fine art photography"
+                                 loading="lazy" decoding="async">
                         </div>
-                        <div class="gallery-caption">
-                            <h4>Reading Genesis Series</h4>
-                            <p>Conceptual fine art exploring identity, memory, and society through visual storytelling</p>
-                            <div class="project-tags">
+                        <div class="card-info">
+                            <h3 class="card-title">Reading Genesis</h3>
+                            <p class="card-category">[Fine Art]</p>
+                            <p class="card-description">Conceptual work exploring identity, memory, and society</p>
+                            <div class="card-tags">
                                 <span class="tag">Fine Art</span>
                                 <span class="tag">Conceptual</span>
                             </div>
-                            <a href="https://www.instagram.com/72film/" target="_blank" rel="noopener noreferrer">View @72film →</a>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <div class="image-placeholder">
-                            <img src="./assets/images/portfolio/architecture/untitled-01-city-skyline-installation-1.jpg" 
-                                 alt="Architecture photography - City skyline installation" 
-                                 style="width: 100%; height: 100%; object-fit: cover;">
+                    </article>
+
+                    <article class="exhibition-card" data-category="architecture">
+                        <div class="card-media">
+                            <img src="./assets/images/portfolio/architecture/untitled-01-city-skyline-installation-1.jpg"
+                                 alt="City Skyline Installation - Architecture photography"
+                                 loading="lazy" decoding="async">
                         </div>
-                        <div class="gallery-caption">
-                            <h4>City Skyline Installation</h4>
-                            <p>Urban landscapes and architectural photography of Johannesburg's evolving cityscape</p>
-                            <div class="project-tags">
+                        <div class="card-info">
+                            <h3 class="card-title">City Skyline Installation</h3>
+                            <p class="card-category">[Architecture]</p>
+                            <p class="card-description">Urban landscapes of Johannesburg's evolving cityscape</p>
+                            <div class="card-tags">
                                 <span class="tag">Architecture</span>
                                 <span class="tag">Urban</span>
                             </div>
-                            <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer">View on Instagram →</a>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <div class="image-placeholder">
-                            <img src="./assets/images/portfolio/photovogue/0.jpg" 
-                                 alt="Thapelo Masebe - Black and white portrait, PhotoVogue featured work" 
-                                 style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <div class="gallery-caption">
-                            <h4>PhotoVogue Featured</h4>
-                            <p>17 photos featured on Vogue's prestigious platform including this black and white portrait. International recognition for documentary and portraiture work.</p>
-                            <div class="project-tags">
-                                <span class="tag featured">Vogue</span>
-                                <span class="tag featured">International</span>
-                                <span class="tag featured">17 Photos</span>
-                            </div>
-                            <a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer">View PhotoVogue Profile →</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    </article>
 
-            <!-- Contact CTA -->
-            <section class="contact-cta">
-                <h2 class="section-title">Let's Work Together</h2>
-                <p>Interested in collaborating or commissioning work? I'm always excited to discuss new projects and creative opportunities.</p>
-                <div class="cta-links">
-                    <a href="mailto:thapelomasebe@hotmail.com" class="cta-button">Send Email</a>
-                    <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer" class="cta-button">Follow on Instagram</a>
+                    <article class="exhibition-card" data-category="recognition">
+                        <div class="card-media">
+                            <img src="./assets/images/portfolio/photovogue/0.jpg"
+                                 alt="PhotoVogue Featured - International recognition"
+                                 loading="lazy" decoding="async">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">PhotoVogue Featured</h3>
+                            <p class="card-category">[Recognition]</p>
+                            <p class="card-description">17 photos featured on Vogue's prestigious platform</p>
+                            <div class="card-tags">
+                                <span class="tag">Vogue</span>
+                                <span class="tag">International</span>
+                                <span class="tag">17 Photos</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-            </section>
-        </aside>
+
+                <div class="exhibition-footer">
+                    <a href="archive.html" class="btn btn--secondary">Complete Archive →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- [PHOTOGRAPHY JOURNEY] -->
+        <section class="journey-section">
+            <div class="container">
+                <h2 class="section-title">[Photography Journey]</h2>
+                <div class="journey-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-year">[2014]</h3>
+                            <h4 class="timeline-title">Beginning</h4>
+                            <p>Started photography journey in high school, focusing on automotive photography with my cousin.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-year">[2016]</h3>
+                            <h4 class="timeline-title">University & Photojournalism</h4>
+                            <p>Joined university newspaper and documented the "Fees Must Fall" protests, learning the importance of storytelling through photography.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-year">[2017-<span id="current-year-timeline">2024</span>]</h3>
+                            <h4 class="timeline-title">Professional Development</h4>
+                            <p>Expanded into multiple photography genres, built portfolio across platforms, and gained recognition on PhotoVogue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [DATA SCIENCE EXHIBITION] -->
+        <section id="data-science" class="domain-exhibition">
+            <div class="container">
+                <header class="exhibition-header">
+                    <div class="exhibition-icon">
+                        <span class="material-icons">psychology</span>
+                    </div>
+                    <h2 class="exhibition-title">Data Science</h2>
+                    <p class="exhibition-subtitle">Machine Learning Engineering at Ogilvy South Africa</p>
+                </header>
+
+                <div class="exhibition-content">
+                    <div class="exhibition-main">
+                        <p class="exhibition-intro">Applying advanced analytics and AI to solve complex client challenges. Currently building machine learning models using <strong data-annotation="python" tabindex="0" role="button" aria-label="Learn about Python programming">Python</strong>, <strong data-annotation="tensorflow" tabindex="0" role="button" aria-label="Learn about TensorFlow">TensorFlow</strong>, and <strong data-annotation="sql" tabindex="0" role="button" aria-label="Learn about SQL">SQL</strong> to drive data-driven creative solutions at <strong data-annotation="ogilvy" tabindex="0" role="button" aria-label="Learn about Ogilvy South Africa">Ogilvy South Africa</strong>.</p>
+
+                        <div class="methodology-grid">
+                            <div class="methodology-item">
+                                <h4>Exploratory Data Analysis</h4>
+                                <p>Analyzing datasets to summarize characteristics and discover patterns using statistical methods and visual techniques.</p>
+                            </div>
+                            <div class="methodology-item">
+                                <h4>Predictive Modeling</h4>
+                                <p>Building machine learning models to forecast outcomes and inform strategic decision-making processes.</p>
+                            </div>
+                            <div class="methodology-item">
+                                <h4>Data Visualization</h4>
+                                <p>Creating compelling visual representations of complex data to communicate insights and drive understanding.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="exhibition-sidebar">
+                        <div class="metrics-display">
+                            <h5>Current Projects</h5>
+                            <div class="metric">
+                                <span class="metric-value">5+</span>
+                                <span class="metric-label">ML Models Deployed</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Python</span>
+                                <span class="metric-label">Primary Language</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">TensorFlow</span>
+                                <span class="metric-label">Deep Learning Framework</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <footer class="exhibition-footer">
+                    <div class="exhibition-links">
+                        <a href="https://github.com/Cozisoul/DataSciencePortfolio" class="exhibition-link">Data Science Portfolio →</a>
+                        <a href="https://www.ogilvy.co.za/" class="exhibition-link">Ogilvy South Africa →</a>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <!-- [PHOTOGRAPHY EXHIBITION] -->
+        <section id="photography" class="domain-exhibition">
+            <div class="container">
+                <header class="exhibition-header">
+                    <div class="exhibition-icon">
+                        <span class="material-icons">camera_alt</span>
+                    </div>
+                    <h2 class="exhibition-title">Photography</h2>
+                    <p class="exhibition-subtitle">Commercial & Documentary Practice</p>
+                </header>
+
+                <div class="exhibition-content">
+                    <div class="exhibition-main">
+                        <p class="exhibition-intro">Commercial photographer specializing in fashion and lifestyle campaigns for global brands. Documentary work capturing social movements and human stories across South Africa, with 17 features on Vogue's PhotoVogue platform.</p>
+
+                        <div class="portfolio-categories">
+                            <div class="category-item">
+                                <h4>Commercial Photography</h4>
+                                <p>Brand campaigns and editorial work for <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">Vans</strong>, <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">Sportscene</strong>, <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">Cotton On</strong>, and <strong data-annotation="fashion" tabindex="0" role="button" aria-label="Learn about fashion photography">Viktor & Rolf</strong>.</p>
+                            </div>
+                            <div class="category-item">
+                                <h4>Documentary Work</h4>
+                                <p>Capturing social movements and human stories, including the historic Fees Must Fall protests that shaped South African higher education.</p>
+                            </div>
+                            <div class="category-item">
+                                <h4>Editorial Practice</h4>
+                                <p>Former Image Editor at Varsity Newspaper (UCT), responsible for visual content curation and technical quality standards.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="exhibition-sidebar">
+                        <div class="metrics-display">
+                            <h5>Achievements</h5>
+                            <div class="metric">
+                                <span class="metric-value">17</span>
+                                <span class="metric-label">PhotoVogue Features</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">2014</span>
+                                <span class="metric-label">Photography Journey</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Global</span>
+                                <span class="metric-label">Brand Collaborations</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <footer class="exhibition-footer">
+                    <div class="exhibition-links">
+                        <a href="https://www.instagram.com/thaeplo_gv72/" class="exhibition-link">@thaeplo_gv72 →</a>
+                        <a href="https://www.vogue.com/photovogue/photographers/210386" class="exhibition-link">PhotoVogue →</a>
+                        <a href="https://www.behance.net/thapelomasebe" class="exhibition-link">Behance →</a>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <!-- [TMM-OS EXHIBITION] -->
+        <section id="tmm-os" class="domain-exhibition">
+            <div class="container">
+                <header class="exhibition-header">
+                    <div class="exhibition-icon">
+                        <span class="material-icons">memory</span>
+                    </div>
+                    <h2 class="exhibition-title">TMM–OS</h2>
+                    <p class="exhibition-subtitle">Design System Architecture</p>
+                </header>
+
+                <div class="exhibition-content">
+                    <div class="exhibition-main">
+                        <p class="exhibition-intro">Personal operating system and comprehensive design system architecture. A framework bridging systematic engineering principles with poetic creative expression. Currently developing v5.0 with modular CSS components and responsive design patterns that embody the "Systematic-Poetic" philosophy.</p>
+
+                        <div class="system-features">
+                            <div class="feature-item">
+                                <h4>Systematic Foundation</h4>
+                                <p>12-column grid system, 8px spacing scale, functional color tokens, and modular component architecture inspired by Konstantin Grcic and Dieter Rams.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>Poetic Expression</h4>
+                                <p>Intentional asymmetry, fluid animations, and narrative-driven design patterns inspired by Mark Bradford, Carrie Mae Weems, and Virgil Abloh.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>Dual-Voice Typography</h4>
+                                <p>Systematic voice (monospace) for annotations and metadata, Poetic voice (serif/sans-serif) for narrative content, and Signature voice for personal expression.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="exhibition-sidebar">
+                        <div class="metrics-display">
+                            <h5>System Specifications</h5>
+                            <div class="metric">
+                                <span class="metric-value">v5.0</span>
+                                <span class="metric-label">Current Version</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">12</span>
+                                <span class="metric-label">Column Grid</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Dual-Voice</span>
+                                <span class="metric-label">Typography System</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <footer class="exhibition-footer">
+                    <div class="exhibition-links">
+                        <a href="https://github.com/Cozisoul/tmm-os" class="exhibition-link">TMM–OS Repository →</a>
+                        <a href="https://github.com/Cozisoul/tmm-web" class="exhibition-link">Live Implementation →</a>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+
+        <!-- [PLATFORM PRESENCE] -->
+        <section class="platforms-section">
+            <div class="container">
+                <h2 class="section-title">[Platform Presence]</h2>
+                <div class="platforms-grid">
+                    <div class="platform-card">
+                        <h3>[PhotoVogue]</h3>
+                        <p>17 photos featured with one "Best of PhotoVogue" selection, showcasing my work on Vogue's prestigious platform.</p>
+                        <a href="https://www.vogue.com/photovogue/photographers/210386" target="_blank" rel="noopener noreferrer" class="platform-link">View Profile →</a>
+                    </div>
+
+                    <div class="platform-card">
+                        <h3>[Behance]</h3>
+                        <p>Professional portfolio showcasing curated projects and creative collaborations.</p>
+                        <a href="https://www.behance.net/thapelomasebe" target="_blank" rel="noopener noreferrer" class="platform-link">View Portfolio →</a>
+                    </div>
+
+                    <div class="platform-card">
+                        <h3>[Instagram]</h3>
+                        <p>Multiple accounts documenting my photography journey: @thapelo_gv72, @thaporaphy, @72film</p>
+                        <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer" class="platform-link">Follow @thapelo_gv72 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [CONTACT] -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title">[Let's Work Together]</h2>
+                    <p>Interested in collaborating or commissioning work? I'm always excited to discuss new projects and creative opportunities.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:thapelomasebe@hotmail.com" class="btn btn--primary">Send Email</a>
+                        <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Follow on Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- [FOOTER] -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-left">
                 <div class="footer-brand">
                     <h3 class="footer-name">Thapelo Madiba Masebe</h3>
-                    <p class="footer-subtitle">Transdisciplinary Artist, Photographer & Creative Technologist</p>
+                    <p class="footer-subtitle">[Transdisciplinary Artist, Photographer & Creative Technologist]</p>
                     <p class="footer-location">
                         <span class="material-icons">location_on</span>
                         Johannesburg, South Africa
@@ -432,7 +609,7 @@
                 </div>
                 <div class="footer-copyright">
                     <p>&copy; <span id="current-year">2024</span> Thapelo Madiba Masebe. All rights reserved.</p>
-                    <p class="footer-credits">Built with TMM-OS Design System v4.0</p>
+                    <p class="footer-credits">Built with TMM–OS Design System</p>
                 </div>
             </div>
             <div class="footer-right">
@@ -440,7 +617,7 @@
                     <div class="footer-section">
                         <h4 class="footer-section-title">
                             <span class="material-icons">work</span>
-                            Portfolio
+                            [Portfolio]
                         </h4>
                         <div class="footer-links">
                             <a href="./archive.html">
@@ -460,7 +637,7 @@
                     <div class="footer-section">
                         <h4 class="footer-section-title">
                             <span class="material-icons">share</span>
-                            Platforms
+                            [Platforms]
                         </h4>
                         <div class="footer-links">
                             <a href="https://www.instagram.com/thapelo_gv72/" target="_blank" rel="noopener noreferrer">
@@ -480,7 +657,7 @@
                     <div class="footer-section">
                         <h4 class="footer-section-title">
                             <span class="material-icons">settings</span>
-                            Technical
+                            [Technical]
                         </h4>
                         <div class="footer-links">
                             <a href="#" onclick="toggleTheme()">
@@ -514,28 +691,28 @@
         </div>
     </footer>
 
-    <!-- Performance Monitoring -->
+    <!-- [PERFORMANCE MONITORING] -->
     <script>
       // Core Web Vitals monitoring
       function sendToAnalytics(metric) {
         console.log('Performance Metric:', metric);
         // Add your analytics tracking here
       }
-      
+
       // Measure LCP
       new PerformanceObserver((entryList) => {
         for (const entry of entryList.getEntries()) {
           sendToAnalytics({ name: 'LCP', value: entry.startTime });
         }
       }).observe({ entryTypes: ['largest-contentful-paint'] });
-      
+
       // Measure FID
       new PerformanceObserver((entryList) => {
         for (const entry of entryList.getEntries()) {
           sendToAnalytics({ name: 'FID', value: entry.processingStart - entry.startTime });
         }
       }).observe({ entryTypes: ['first-input'] });
-      
+
         // Measure CLS (only if supported)
         if ('PerformanceObserver' in window) {
           try {
@@ -553,20 +730,73 @@
           }
         }
     </script>
-    
+
     <script>
-      // Update current year dynamically
+      // Update current year and date dynamically
       const currentYear = new Date().getFullYear();
+      const currentDate = new Date();
+
+      // Format date as "Mon DD, YYYY"
+      const dateOptions = {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      };
+      const formattedDate = currentDate.toLocaleDateString('en-US', dateOptions);
+
       document.getElementById('current-year').textContent = currentYear;
       document.getElementById('current-year-timeline').textContent = currentYear;
-      
+      document.getElementById('current-date').textContent = formattedDate;
+
       // Calculate age dynamically (assuming birth year 1996)
       const birthYear = 1996;
       const age = currentYear - birthYear;
       document.getElementById('age').textContent = age;
     </script>
-    
+
     <script src="./js/cookie-consent.js?v=2.4"></script>
     <script src="./js/main.js?v=2.4"></script>
+    <script>
+      // [LIGHTBOX] Lightweight modal using existing modal styles
+      (function(){
+        const gallery = document.querySelector('.image-gallery');
+        if (!gallery) return;
+        let modal, modalContent, modalImg;
+
+        function ensureModal(){
+          if (modal) return;
+          modal = document.createElement('div');
+          modal.className = 'modal';
+          modal.setAttribute('role','dialog');
+          modal.setAttribute('aria-modal','true');
+          modal.innerHTML = '\n            <div class="modal-content" tabindex="-1">\n              <button class="modal-close" aria-label="Close">✕</button>\n              <img alt="Expanded image" style="max-width:100%;height:auto;display:block;">\n            </div>';
+          document.body.appendChild(modal);
+          modalContent = modal.querySelector('.modal-content');
+          modalImg = modal.querySelector('img');
+          modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
+          modal.querySelector('.modal-close').addEventListener('click', close);
+          document.addEventListener('keydown', (e)=>{ if(modal.classList.contains('is-open') && e.key==='Escape') close(); });
+        }
+
+        function open(src, alt){
+          ensureModal();
+          modalImg.src = src;
+          modalImg.alt = alt || '';
+          modal.classList.add('is-open');
+          modalContent.focus();
+        }
+        function close(){
+          modal.classList.remove('is-open');
+          modalImg.src = '';
+        }
+
+        gallery.addEventListener('click', (e)=>{
+          const img = e.target.closest('img');
+          if(!img) return;
+          const src = img.getAttribute('data-lightbox-src') || img.src;
+          open(src, img.alt);
+        });
+      })();
+    </script>
 </body>
 </html>
