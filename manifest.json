@@ -1,0 +1,14 @@
+{
+  "name": "Thapelo Madiba Masebe - Portfolio",
+  "short_name": "Thapelo Masebe",
+  "description": "Digital CV and professional hub for Thapelo Madiba Masebe, a transdisciplinary artist, creative technologist, and emerging data scientist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF8E7",
+  "theme_color": "#FFF8E7",
+  "orientation": "portrait-primary",
+  "icons": [],
+  "categories": ["portfolio", "cv", "professional"],
+  "lang": "en",
+  "dir": "ltr"
+}

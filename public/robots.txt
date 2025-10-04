@@ -1,3 +1,39 @@
 User-agent: *
 Allow: /
-Sitemap: https://tmm-web.co/public/sitemap.xml
+
+# Disallow access to sensitive files
+Disallow: /js/
+Disallow: /css/
+Disallow: /assets/images/portfolio/*.jpg
+Disallow: /*.pdf
+Disallow: /test.html
+Disallow: /test-report-*.txt
+Disallow: /backup.sh
+Disallow: /deploy.sh
+Disallow: /maintain.sh
+Disallow: /update.sh
+Disallow: /test.sh
+Disallow: /test.sh.bak*
+Disallow: /update-portfolio.js
+Disallow: /hi.py
+Disallow: /sw.js
+Disallow: /*.md
+Disallow: /archive.html
+
+# Allow access to main portfolio images
+Allow: /assets/images/portfolio/bio/me-1.jpg
+Allow: /assets/images/portfolio/documentary/life-as-it-happens-2.jpg
+Allow: /assets/images/portfolio/portraiture/amaqamata-1.jpg
+Allow: /assets/images/portfolio/fashion/vans-editorial-1.jpg
+Allow: /assets/images/portfolio/fine-art/reading-genesis-art-series-3.jpg
+Allow: /assets/images/portfolio/architecture/untitled-01-city-skyline-installation-1.jpg
+Allow: /assets/images/portfolio/photovogue/0.jpg
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://thapelomasebe.com/sitemap.xml
+
+# Additional sitemaps
+Sitemap: https://thapelomasebe.com/sitemap-images.xml
