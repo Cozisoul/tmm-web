@@ -231,6 +231,7 @@ a:hover{
   .right-column{
     border: none;
     padding: 1rem;
+    overflow-y: visible; /* Prevent nested scrolling on mobile */
   }
 
   .name{
