@@ -222,6 +222,8 @@ a:hover{
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
+    height: auto;
+    min-height: 100vh;
   }
 
   .left-column,
