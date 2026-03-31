@@ -380,7 +380,7 @@
     text-align: center;
     display: block;
   }
-}
+
 
 /* Tablet Layout */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -471,7 +471,7 @@
     padding: var(--space-xs) var(--space-sm);
     min-height: 44px;
   }
-}
+
 
 /* Tablet (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -596,7 +596,7 @@
   .project-item:hover {
     transform: translateX(var(--space-xs));
   }
-}
+
 
 /* Large Desktop (1441px+) */
 @media (min-width: 1441px) {
