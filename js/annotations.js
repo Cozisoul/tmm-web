@@ -38,8 +38,18 @@ const annotationData = {
     },
     "deviare": {
         title: "Deviare",
-        text: "A structured Data Science Learnership program where I am formalizing my skills in Python, R, SQL, Power BI, and Tableau.",
+        text: "Completed a structured Data Science Learnership program, formalizing skills in Python, R, SQL, Power BI, and Tableau.",
         link: { text: "Visit Deviare.co.za", url: "https://www.deviare.co.za/", target: "_blank" }
+    },
+    "deviare-cert": {
+        title: "Data Science Practitioner Certificate",
+        text: "Official certification from Deviare acknowledging completion of the rigorous, year-long Data Science Learnership.",
+        link: { text: "Visit Deviare.co.za", url: "https://www.deviare.co.za/", target: "_blank" }
+    },
+    "pan-african-nlp": {
+        title: "Pan-African Social Listening",
+        text: "An automated data pipeline and NLP workflow to monitor and analyze macroeconomic and consumer trends across major African markets.",
+        link: { text: "View Repository", url: "https://github.com/Cozisoul", target: "_blank" }
     },
     "freelance": {
         title: "Freelance Practice (2017-Present)",
