@@ -134,6 +134,20 @@ ul{
   margin: 0;
 }
 
+/* cv lists - bullet points */
+ul.cv-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--clr-text);
+  font-weight: normal;
+}
+
+ul.cv-list li {
+  margin-bottom: 0.25rem;
+}
+
 /**
  *  --------------------------------------------------------------------
  *  Links and Buttons
